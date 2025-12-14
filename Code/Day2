@@ -1,0 +1,28 @@
+<!--
+Day 2: 100 Days of Web Development
+Topic: HTML Text Elements
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Day 2 - Web Development</title>
+</head>
+<body>
+
+    <h1>Day 2 of 100 Days of Web Development</h1>
+
+    <p>
+        Today I learned more about basic HTML text elements
+        and how content is structured on a webpage.
+    </p>
+
+    <h2>HTML Text Elements</h2>
+
+    <p>This is a paragraph tag.</p>
+    <p><strong>This text is bold using strong tag.</strong></p>
+    <p><em>This text is italic using em tag.</em></p>
+
+</body>
+</html>
