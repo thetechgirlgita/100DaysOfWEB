@@ -19,7 +19,7 @@ This repository will be updated **daily** as I continue my learning journey.
 | Day | Topic | Code |
 |----:|-------|------|
 | Day 01 | HTML Basics | [View Code](Code/Day1.txt) | 
-| Day 02 | Text Tags | [View Code](Code/Day2.txt) |
+| Day 02 | Text Tags | [View Code](Code/Day2) |
 
 
 > More To go
