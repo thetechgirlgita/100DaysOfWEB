@@ -1,0 +1,35 @@
+<!--
+Day 3: 100 Days of Web Development
+Topic: HTML Links
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Day 3 - HTML Links</title>
+</head>
+<body>
+
+    <h1>Day 3 of 100 Days of Web Development</h1>
+
+    <p>
+        Today I learned how to create links using the anchor (a) tag in HTML.
+    </p>
+
+    <h2>My Links</h2>
+
+    <p>
+        <a href="https://www.linkedin.com/in/thetechgirlgita" target="_blank">
+            Visit my LinkedIn profile
+        </a>
+    </p>
+
+    <p>
+        <a href="https://github.com/thetechgirlgita" target="_blank">
+            Visit my GitHub 
+        </a>
+    </p>
+
+</body>
+</html>
