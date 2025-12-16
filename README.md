@@ -21,7 +21,7 @@ This repository will be updated **daily** as I continue my learning journey.
 | Day 01 | HTML Basics | [View Code](Code/Day1.txt) | 
 | Day 02 | Text Tags | [View Code](Code/Day2) |
 | Day 03 | Link Tag | [View Code](Code/Day3) |
-
+| Day 04 | Image Tag | [View Code](Code/Day4) |
 
 
 
