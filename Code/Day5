@@ -1,0 +1,35 @@
+<!--
+Day 5: 100 Days of Web Development
+Topic: HTML Lists
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Day 5 - HTML Lists</title>
+</head>
+<body>
+
+    <h1>Day 5 of 100 Days of Web Development</h1>
+
+    <p>
+        Today I learned how to create lists in HTML.
+    </p>
+
+    <h2>Unordered List</h2>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+
+    <h2>Ordered List</h2>
+    <ol>
+        <li>Learn basics</li>
+        <li>Practice daily</li>
+        <li>Build projects</li>
+    </ol>
+
+</body>
+</html>
