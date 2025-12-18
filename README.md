@@ -23,8 +23,7 @@ This repository will be updated **daily** as I continue my learning journey.
 | Day 03 | Link Tag | [View Code](Code/Day3) |
 | Day 04 | Image Tag | [View Code](Code/Day4) |
 | Day 05 | HTML List | [View Code](Code/Day5) |
-
-
+| Day 06 | HTML Table | [View Code](Code/Day6) |
 
 
 
