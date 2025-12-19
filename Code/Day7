@@ -1,0 +1,31 @@
+<!--
+Day 7: 100 Days of Web Development
+Topic: HTML Forms 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Day 7 - HTML Forms</title>
+</head>
+<body>
+
+    <h1>Day 7 of 100 Days of Web Development</h1>
+
+    <p>
+        Today I learned the basics of HTML forms.
+    </p>
+
+    <form>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" placeholder="Enter your name"><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" placeholder="Enter your email"><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>
