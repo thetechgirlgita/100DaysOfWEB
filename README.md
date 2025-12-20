@@ -25,4 +25,4 @@ This repository will be updated **daily** as I continue my learning journey.
 | Day 05 | HTML List | [View Code](Code/Day5) |
 | Day 06 | HTML Table | [View Code](Code/Day6) |
 | Day 07 | HTML Form | [View Code](Code/Day7) |
-
+| Day 08 | HTML Form Continue | [View Code](Code/Day8) 
