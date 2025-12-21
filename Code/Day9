@@ -1,0 +1,51 @@
+<!--
+Day 9: 100 Days of Web Development
+Topic: HTML Form Input Types
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Day 9 - Form Input Types</title>
+</head>
+<body>
+
+    <h1>Day 9 of 100 Days of Web Development</h1>
+
+    <p>
+        Today I learned about different input types in HTML forms.
+    </p>
+
+    <form>
+        <label>
+            Email:
+            <input type="email" name="email"> 
+        </label>
+        <br><br>
+
+        <label>
+            Password:
+            <input type="password" name="password">
+        </label>
+        <br><br>
+
+        <p>Choose your role:</p>
+        <label>
+            <input type="radio" name="role"> Student
+        </label>
+        <label>
+            <input type="radio" name="role"> Developer
+        </label>
+        <br><br>
+
+        <label>
+            <input type="checkbox"> Human
+        </label>
+        <br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>
