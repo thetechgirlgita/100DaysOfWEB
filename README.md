@@ -24,5 +24,6 @@ This repository will be updated **daily** as I continue my learning journey.
 | Day 04 | Image Tag | [View Code](Code/Day4) |
 | Day 05 | HTML List | [View Code](Code/Day5) |
 | Day 06 | HTML Table | [View Code](Code/Day6) |
-| Day 07 | HTML Form | [View Code](Code/Day7) |
-| Day 08 | HTML Form Continue | [View Code](Code/Day8) 
+| Day 07 | HTML Form Basic Structure | [View Code](Code/Day7) |
+| Day 08 | HTML Form Inputs | [View Code](Code/Day8) 
+| Day 09 | HTML Form Advance Inputs | [View Code](Code/Day9) 
