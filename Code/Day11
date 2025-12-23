@@ -1,0 +1,33 @@
+<!--
+Day 11: 100 Days of Web Development
+Topic: HTML Semantic Elements
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Day 11 - Semantic HTML</title>
+</head>
+<body>
+
+    <header>
+        <h1>Day 11 of 100 Days of Web Development (Header)</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>What I Learned Today</h2>
+            <p>
+                Today I learned about semantic HTML elements like
+                header, main, section, and footer.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>The End - Footer</p>
+    </footer>
+
+</body>
+</html>
