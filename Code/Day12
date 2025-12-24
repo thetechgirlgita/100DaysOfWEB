@@ -1,0 +1,33 @@
+<!--
+Day 12: 100 Days of Web Development
+Topic: HTML Media (Audio & Video)
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Day 12 - HTML Media</title>
+</head>
+<body>
+
+    <h1>Day 12 of 100 Days of Web Development</h1>
+
+    <p>
+        Today I learned how to add audio and video to a webpage using HTML media tags.
+    </p>
+
+    <h2>Audio Example</h2>
+    <audio controls>
+        <source src="audio.mp3" type="audio/mpeg">
+        Demo Audio
+    </audio>
+
+    <h2>Video Example</h2>
+    <video controls width="300">
+        <source src="video.mp4" type="video/mp4">
+        Demo Video
+    </video>
+
+</body>
+</html>
