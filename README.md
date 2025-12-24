@@ -26,6 +26,7 @@ This repository will be updated **daily** as I continue my learning journey.
 | Day 06 | HTML Table | [View Code](Code/Day6) |
 | Day 07 | HTML Form Basic Structure | [View Code](Code/Day7) |
 | Day 08 | HTML Form Inputs | [View Code](Code/Day8) 
-| Day 09 | HTML Form Advance Inputs | [View Code](Code/Day9) 
-| Day 10 | HTML Form Advance Inputs: Required | [View Code](Code/Day10) 
-| Day 11 | HTML Semantic Tags | [View Code](Code/Day11) 
+| Day 09 | HTML Form Advance Inputs | [View Code](Code/Day9) |
+| Day 10 | HTML Form Advance Inputs: Required | [View Code](Code/Day10) |
+| Day 11 | HTML Semantic Tags | [View Code](Code/Day11) |
+| Day 12 | HTML Audio And Video Tags | [View Code](Day12)|
