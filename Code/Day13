@@ -1,0 +1,30 @@
+<!--
+Day 13: 100 Days of Web Development
+Topic: HTML iframe
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Day 13 - HTML iframe</title>
+</head>
+<body>
+
+    <h1>Day 13 of 100 Days of Web Development</h1>
+
+    <p>
+        Today I learned how to embed external content using the iframe tag.
+    </p>
+
+    <h2>Embedded Website</h2>
+
+    <iframe 
+        src="https://www.wikipedia.org"
+        width="600"
+        height="300"
+        title="Wikipedia">
+    </iframe>
+
+</body>
+</html>
