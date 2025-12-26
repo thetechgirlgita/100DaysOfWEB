@@ -1,0 +1,44 @@
+<!--
+Day 14: 100 Days of Web Development
+Topic: HTML Page Layout using Semantic Elements
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Day 14 - HTML Page Layout</title>
+</head>
+<body>
+
+    <header>
+        <h1>My GitRa</h1>
+        <p>Learning Web Development Day by Day</p>
+    </header>
+
+    <nav>
+        <a href="#">Home</a> |
+        <a href="#">About</a> |
+        <a href="#">Contact</a>
+    </nav>
+
+    <main>
+        <section>
+            <h2>Main Content</h2>
+            <p>
+                Today I learned how to structure a webpage using semantic HTML elements.
+            </p>
+        </section>
+
+        <aside>
+            <h3>Side Section</h3>
+            <p>This is additional information.</p>
+        </aside>
+    </main>
+
+    <footer>
+        <p>© 2025 My GitRa</p>
+    </footer>
+
+</body>
+</html>
