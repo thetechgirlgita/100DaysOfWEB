@@ -1,0 +1,29 @@
+<!--
+Day 15: 100 Days of Web Development
+Topic: HTML class and id (Basics)
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Day 15 - Class and ID</title>
+</head>
+<body>
+
+    <h1 id="main-heading">Day 15 of 100 Days of Web Development</h1>
+
+    <p class="intro">
+        Today I learned about class and id attributes in HTML.
+    </p>
+
+    <p class="intro">
+        Class can be used on multiple elements.
+    </p>
+
+    <p id="unique-text">
+        ID is unique and used only once on a page.
+    </p>
+
+</body>
+</html>
