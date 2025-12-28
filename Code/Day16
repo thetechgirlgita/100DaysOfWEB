@@ -1,0 +1,33 @@
+<!--
+Day 16: 100 Days of Web Development
+Topic: Inline vs Block Elements
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Day 16 - Inline vs Block</title>
+</head>
+<body>
+
+    <h1>Day 16 of 100 Days of Web Development</h1>
+
+    <p>
+        Today I learned the difference between block and inline elements in HTML.
+    </p>
+
+    <h2>Block Elements</h2>
+
+    <div>This is a block element (div)</div>
+    <p>This is another block element (p)</p>
+
+    <h2>Inline Elements</h2>
+
+    <p>
+        This is an <span>inline span</span> inside a paragraph.
+        Here is an <a href="#">inline link</a>.
+    </p>
+
+</body>
+</html>
