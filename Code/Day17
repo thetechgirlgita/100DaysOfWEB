@@ -1,0 +1,29 @@
+<!--
+Day 17: 100 Days of Web Development
+Topic: HTML Meta Tags
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Meta tags -->
+    <meta name="description" content="Day 17 of my 100 Days of Web Development Challenge">
+    <meta name="keywords" content="HTML, Web Development, 100 Days of Code">
+    <meta name="author" content="Gita Khanal">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Day 17 - HTML Meta Tags</title>
+</head>
+<body>
+
+    <h1>Day 17 of 100 Days of Web Development</h1>
+
+    <p>
+        Today I learned about HTML meta tags and how they help browsers,
+        search engines, and responsive design.
+    </p>
+
+</body>
+</html>
