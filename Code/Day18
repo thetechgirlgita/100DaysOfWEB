@@ -1,0 +1,36 @@
+<!--
+Day 18: 100 Days of Web Development
+Topic: HTML Accessibility Basics
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Day 18 - HTML Accessibility</title>
+</head>
+<body>
+
+    <h1>Day 18 of 100 Days of Web Development</h1>
+
+    <p>
+        Today I learned basic HTML accessibility features
+        that help improve user experience for everyone.
+    </p>
+
+    <!-- Image with alt text -->
+    <img 
+        src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
+        alt="Person working on a laptop"
+        width="300"
+    >
+
+    <br><br>
+
+    <!-- Button with title and aria label -->
+    <button title="Submit Form" aria-label="Submit Button">
+        Submit
+    </button>
+
+</body>
+</html>
