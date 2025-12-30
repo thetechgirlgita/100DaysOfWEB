@@ -36,3 +36,4 @@ This repository will be updated **daily** as I continue my learning journey.
 | Day 16 | HTML Block element and Inline Element) | [View Code](Day16)|
 | Day 17 | HTML Meta Tags | [View Code](Day17)|
 | Day 18 | HTML Accessibility Basics (alt, title, aria-label) | [View Code](Day18)|
+| Day 19 | HTML details and summary tags | [View Code](Day19)|
