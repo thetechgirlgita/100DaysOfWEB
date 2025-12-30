@@ -1,0 +1,38 @@
+<!--
+Day 19: 100 Days of Web Development
+Topic: HTML Details & Summary
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Day 19 - HTML Details & Summary</title>
+</head>
+<body>
+
+    <h1>Day 19 of 100 Days of Web Development</h1>
+
+    <p>
+        Today I learned how to use the details and summary tags
+        to show and hide content.
+    </p>
+
+    <details>
+        <summary>What is Web Development?</summary>
+        <p>
+            Web development is the process of building websites
+            and web applications for the internet.
+        </p>
+    </details>
+
+    <details>
+        <summary>Why I Started This Challenge</summary>
+        <p>
+            To build strong fundamentals and become consistent
+            in learning web development.
+        </p>
+    </details>
+
+</body>
+</html>
