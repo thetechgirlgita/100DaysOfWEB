@@ -1,0 +1,39 @@
+<!--
+Day 20: 100 Days of Web Development
+Topic: HTML fieldset and legend
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Day 20 - HTML Fieldset</title>
+</head>
+<body>
+
+    <h1>Day 20 of 100 Days of Web Development</h1>
+
+    <p>
+        Today I learned how to group form elements using
+        fieldset and legend in HTML.
+    </p>
+
+    <form>
+        <fieldset>
+            <legend>Personal Information</legend>
+
+            <label>
+                Name:
+                <input type="text">
+            </label>
+            <br><br>
+
+            <label>
+                Email:
+                <input type="email">
+            </label>
+        </fieldset>
+    </form>
+
+</body>
+</html>
