@@ -1,0 +1,27 @@
+<!--
+Day 21: 100 Days of Web Development
+Topic: Progress & Meter
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Day 21 - Progress & Meter</title>
+</head>
+<body>
+
+    <h1>Day 21 of 100 Days of Web Development</h1>
+
+    <p>Today I learned how to use the progress and meter elements in HTML.</p>
+
+    <h2>Progress Example</h2>
+    <label>Course Progress:</label><br>
+    <progress value="40" max="100"></progress>
+
+    <h2>Meter Example</h2>
+    <label>Skill Level:</label><br>
+    <meter value="6" min="0" max="10"></meter>
+
+</body>
+</html>
