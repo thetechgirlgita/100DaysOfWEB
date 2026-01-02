@@ -38,3 +38,4 @@ This repository will be updated **daily** as I continue my learning journey.
 | Day 18 | HTML Accessibility Basics (alt, title, aria-label) | [View Code](Day18)|
 | Day 19 | HTML details and summary tags | [View Code](Day19)|
 | Day 20 | HTML fieldset and legend tags | [View Code](Day20)|
+| Day 21 | HTML fieldset and legend tags | [View Code](Day21)|
