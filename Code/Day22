@@ -1,0 +1,29 @@
+<!--
+Day 22: 100 Days of Web Development
+Topic: HTML data-* Attributes
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Day 22 - Data Attributes</title>
+</head>
+<body>
+
+    <h1>Day 22 of 100 Days of Web Development</h1>
+
+    <p>
+        Today I learned about custom data attributes in HTML.
+    </p>
+
+    <button data-user="gita" data-level="beginner">
+        Click Me
+    </button>
+
+    <p data-info="learning-html">
+        This paragraph contains custom data information.
+    </p>
+
+</body>
+</html>
