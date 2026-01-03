@@ -39,3 +39,4 @@ This repository will be updated **daily** as I continue my learning journey.
 | Day 19 | HTML details and summary tags | [View Code](Day19)|
 | Day 20 | HTML fieldset and legend tags | [View Code](Day20)|
 | Day 21 | HTML fieldset and legend tags | [View Code](Day21)|
+| Day 22 | HTML using data-* | [View Code](Day22)|
