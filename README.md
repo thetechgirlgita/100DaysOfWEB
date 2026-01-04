@@ -40,3 +40,4 @@ This repository will be updated **daily** as I continue my learning journey.
 | Day 20 | HTML fieldset and legend tags | [View Code](Day20)|
 | Day 21 | HTML fieldset and legend tags | [View Code](Day21)|
 | Day 22 | HTML using data-* | [View Code](Day22)|
+| Day 23 | HTML using contenteditable tag | [View Code](Day23)|
