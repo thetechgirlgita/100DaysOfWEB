@@ -1,0 +1,30 @@
+<!--
+Day 23: 100 Days of Web Development
+Topic: HTML contenteditable
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Day 23 - Content Editable</title>
+</head>
+<body>
+
+    <h1>Day 23 of 100 Days of Web Development</h1>
+
+    <p>
+        Today I learned how to make content editable using the
+        <strong>contenteditable</strong> attribute in HTML.
+    </p>
+
+    <h2 contenteditable="true">
+        You can edit this heading
+    </h2>
+
+    <p contenteditable="true">
+        Click here and try editing this text directly in the browser.
+    </p>
+
+</body>
+</html>
