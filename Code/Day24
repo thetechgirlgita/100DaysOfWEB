@@ -1,0 +1,36 @@
+<!--
+Day 24: 100 Days of Web Development
+Topic: HTML aria-label Basics
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Day 24 - Aria Label</title>
+</head>
+<body>
+
+    <h1>Day 24 of 100 Days of Web Development</h1>
+
+    <p>
+        Today I learned how to use <strong>aria-label</strong>
+        to improve accessibility in HTML.
+    </p>
+
+    <!-- Button with aria-label -->
+    <button aria-label="Close modal window">
+        ✖
+    </button>
+
+    <br><br>
+
+    <!-- Input with aria-label -->
+    <input 
+        type="search"
+        aria-label="Search website"
+        placeholder="Search..."
+    >
+
+</body>
+</html>
