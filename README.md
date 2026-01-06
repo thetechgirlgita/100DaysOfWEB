@@ -42,3 +42,4 @@ This repository will be updated **daily** as I continue my learning journey.
 | Day 22 | HTML using data-* | [View Code](Day22)|
 | Day 23 | HTML using contenteditable tag | [View Code](Day23)|
 | Day 24 | HTML using aria-label | [View Code](Day24)|
+| Day 25 | HTML Resume Blueprint (Project) | [View Code](Day25)|
