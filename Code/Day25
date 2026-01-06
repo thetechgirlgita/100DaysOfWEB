@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gita Khanal | Web Developer</title>
+</head>
+<body bgcolor="#f4f4f9" text="#333333" style="font-family: sans-serif; line-height: 1.6;">
+
+    <table width="100%" bgcolor="#2c3e50" cellpadding="20" border="0">
+        <tr>
+            <td align="center">
+                <font color="#ffffff" size="6"><b>GITA KHANAL</b></font><br>
+                <font color="#1abc9c" size="4"><b>Junior Web Developer</b></font><br>
+                <font color="#ffffff">
+                    Toronto, ON  | (xxx) xxx xxxx  | thetechgirlgita@gmail.com <br>
+                    <a href="https://linkedin.com/in/thetechgirlgita" style="color: #1abc9c;">LinkedIn</a> | 
+                    <a href="https://github.com/thetechgirlgita" style="color: #1abc9c;">GitHub</a> 
+                </font>
+            </td>
+        </tr>
+    </table>
+
+    <br>
+
+    <table width="90%" align="center" bgcolor="#ffffff" cellpadding="20" style="border: 5px solid #ddddd;">
+        <tr>
+            <td>
+                <font color="#2c3e50" size="5"><b>Professional Summary & Journey</b></font>
+                <hr color="#1abc9c" size="3" width="100" align="left">
+                <p contenteditable="true">
+                    Motivated Junior Web Developer candidate with a foundation in computer programming and hands-on troubleshooting of hardware, software and mobile application development.  
+                    Skilled in customer support and eager to learn IT systems while delivering fast, effective technical solutions. 
+                    My journey transitioned from mobile development into full stack web development.
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <br>
+
+    <table width="90%" align="center" bgcolor="#ffffff" cellpadding="20" style="border: 1px solid #dddddd;">
+        <tr>
+            <td colspan="2">
+                <font color="#2c3e50" size="5"><b>Technical Expertise & Proficiency</b></font>
+                <hr color="#1abc9c" size="3" width="100"  align="left">
+            </td>
+        </tr>
+        <tr>
+            <td width="50%" valign="top">
+                <b>Core IT Support</b> 
+                <table width="100%" bgcolor="#eeeeee" border="0" cellspacing="5">
+                    <tr><td bgcolor="#1abc9c" width="95%"><font color="white">&nbsp;75%</font></td><td></td></tr>
+                </table>
+                <br>
+                <b>Web Development </b> 
+                <table width="100%" bgcolor="#eeeeee" border="0" cellspacing="5">
+                    <tr><td bgcolor="#3498db" width="85%"><font color="white">&nbsp; 55%</font></td><td></td></tr>
+                </table>
+                <br>
+                <b>Mobile Application Development</b> 
+                <table width="100%" bgcolor="#eeeeee" border="0" cellspacing="5">
+                    <tr><td bgcolor="#9b59b6" width="80%"><font color="white">&nbsp; 90%</font></td><td></td></tr>
+                </table>
+            </td>
+            <td width="50%" valign="top">
+                <b>Programming (C++)</b> 
+                <table width="100%" bgcolor="#eeeeee" border="0" cellspacing="5">
+                    <tr><td bgcolor="#e67e22" width="75%"><font color="white">&nbsp;75%</font></td><td></td></tr>
+                </table>
+                <br>
+                <b>Ticketing (ServiceNow/Jira)</b> 
+                <table width="100%" bgcolor="#eeeeee" border="0" cellspacing="5">
+                    <tr><td bgcolor="#e74c3c" width="90%"><font color="white">&nbsp;90%</font></td><td></td></tr>
+                </table>
+                <br>
+                <b>Cloud (AWS Practitioner)</b> 
+                <table width="100%" bgcolor="#eeeeee" border="0" cellspacing="5">
+                    <tr><td bgcolor="#f1c40f" width="70%"><font color="white">&nbsp; 70%</font></td><td></td></tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <br>
+
+    <table width="90%" align="center" bgcolor="#ffffff" cellpadding="20" style="border: 1px solid #dddddd;">
+        <tr>
+            <td>
+                <font color="#2c3e50" size="5"><b>Professional Experience</b></font>
+                <hr color="#1abc9c" size="3" width="100"  align="left">
+                
+                <table width="100%" border="0" cellpadding="20">
+                    <tr bgcolor="#f9f9f9">
+                        <td>
+                            <b>Amusement Associate | Player One Amusement Group</b> <br>
+                            <i>July 2023 - Present</i> 
+                            <ul>
+                                <li>Provide exceptional customer service in fast paced enviroment</li>
+                                <li>Handled technical issues with POS systems and amusement machines</li>
+                                <li>Generated and managed support tickets for timely incident resolution.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr bgcolor="#f9f9f9">
+                        <td>
+                            <b>Junior Flutter Developer | Creative Precision Technologies</b> <br>
+                            <i>Aug 2021 - June 2022</i> 
+                            <ul>
+                                <li>Reduced project design time by 30% through UI optimization.</li>
+                                <li>Integrated mapping APIs, enhancing functionality by 15%.</li>
+                                <li>Supported QA processes to minimize software defects.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <br>
+
+    <table width="90%" align="center" cellspacing="10">
+        <tr>
+            <td width="50%" bgcolor="#ffffff" style="border: 1px solid #dddddd; padding: 20px;" valign="top">
+                <font color="#2c3e50" size="5"><b>Education</b></font>
+                <hr color="#1abc9c" size="3" width="50" align="left">
+                <p>
+                    <b>Diploma in Computer Programming</b> <br>
+                    Seneca Polytechnic, Toronto <br>
+                    <i>Graduated: August 2025</i> 
+                </p>
+                <b>Key Coursework:</b> 
+                <ul>
+                    <li>Web Development</li>
+                    <li>Database Managemnet </li>
+                    <li>Linux</li>
+                </ul>
+            </td>
+            <td width="50%" bgcolor="#ffffff" style="border: 1px solid #dddddd; padding: 20px;" valign="top">
+                <font color="#2c3e50" size="5"><b>Certifications</b></font>
+                <hr color="#1abc9c" size="3" width="50" align="left">
+                <ul>
+                    <li>AWS Cloud Practitioner </li>
+                    <li>IT Support Fundamentals </li>
+                    <li>CompTIA A+ (In Progress) </li>
+                </ul>
+                <font color="#2c3e50" size="5"><b>Languages</b></font>
+                <hr color="#1abc9c" size="3" width="50" align="left">
+                
+                  <ul>
+                    <li>English </li>
+                    <li>French <strong> (In progress...) </strong></li>
+                    
+                  </ul>
+                  
+            </td>
+        </tr>
+    </table>
+
+    <br>
+
+    <table width="100%" bgcolor="#2c3e50" cellpadding="10">
+        <tr>
+            <td align="center">
+                <font color="#ffffff" size="2">
+                    &copy; 2025 Gita Khanal. 
+                    
+                </font>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
