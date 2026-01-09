@@ -45,4 +45,4 @@ This repository will be updated **daily** as I continue my learning journey.
 | Day 25 | HTML Resume Blueprint (Project) | [View Code](Code/Day25/index.html)|
 | Day 26 | HTML - CSS Profile Card | [View Code](Code/Day26/index.html)|
 | Day 27 | HTML - CSS Transform | [View Code](Code/Day27/index.html)|
-
+| Day 28 | HTML - CSS Glassmorphism | [View Code](Code/Day28/index.html)|
