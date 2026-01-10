@@ -1,0 +1,92 @@
+:root {
+    --bg-1: #ff5f6d;
+    --bg-2: #2193b0;
+    --bg-3: #11998e;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
+}
+
+.container {
+    perspective: 1000px; /* Crucial for 3D effect */
+}
+
+/* Hide the actual radio buttons */
+input[type="radio"] { display: none; }
+
+.card {
+    width: 350px;
+    height: 480px;
+    background: #353434;
+    border-radius: 20px;
+    position: relative;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    transform-style: preserve-3d;
+    padding: 30px;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+/* Glassmorphism Effect */
+.glass-layer {
+    position: absolute;
+    inset: 10px;
+    background: rgba(249, 249, 249, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(163, 152, 152, 0.1);
+    border-radius: 15px;
+    z-index: 1;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    transform: translateZ(50px); /* Makes content "float" */
+}
+
+.img-container img {
+    width: 100%;
+    margin: 20px 0;
+    transition: 0.5s;
+}
+
+/* Perspective shifts based on which radio is checked */
+#color-1:checked ~ .card { transform: rotateY(15deg); border-top: 2px solid var(--bg-1); }
+#color-2:checked ~ .card { transform: rotateY(0deg) scale(1.05); border-top: 2px solid var(--bg-2); }
+#color-3:checked ~ .card { transform: rotateY(-15deg); border-top: 2px solid var(--bg-3); }
+
+/* Custom Control Buttons */
+.controls {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.controls label {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 3px solid #333;
+    transition: 0.3s;
+}
+
+.btn-1 { background: var(--bg-1); }
+.btn-2 { background: var(--bg-2); }
+.btn-3 { background: var(--bg-3); }
+
+/* Highlight the active label */
+#color-1:checked ~ .card .btn-1,
+#color-2:checked ~ .card .btn-2,
+#color-3:checked ~ .card .btn-3 {
+    border-color: white;
+    transform: scale(1.2);
+}
