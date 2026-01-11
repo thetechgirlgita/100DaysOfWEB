@@ -43,7 +43,8 @@ This repository will be updated **daily** as I continue my learning journey.
 | Day 23 | HTML using contenteditable tag | [View Code](Code/Day23/index.html)|
 | Day 24 | HTML using aria-label | [View Code](Code/Day24/index.html)|
 | Day 25 | HTML Resume Blueprint (Project) | [View Code](Code/Day25/index.html)|
-| Day 26 | HTML - CSS Profile Card | [View Code](Code/Day26/index.html)|
-| Day 27 | HTML - CSS Transform | [View Code](Code/Day27/index.html)|
-| Day 28 | HTML - CSS Glassmorphism | [View Code](Code/Day28/index.html)|
-| Day 29 | HTML - CSS 3D Transform | [View Code](Code/Day29/index.html)|
+| Day 26 | CSS Profile Card | [View Code](Code/Day26/index.html)|
+| Day 27 | CSS Transform | [View Code](Code/Day27/index.html)|
+| Day 28 | CSS Glassmorphism | [View Code](Code/Day28/index.html)|
+| Day 29 | CSS 3D Transform | [View Code](Code/Day29/index.html)|
+| Day 30 | CSS Responsive Bento UI  | [View Code](Code/Day30/index.html)|
