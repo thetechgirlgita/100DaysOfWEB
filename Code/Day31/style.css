@@ -1,0 +1,111 @@
+:root {
+    --primary: #8edfa7; /* Foodie Red */
+    --secondary: #dbc11c; /* Appetite Yellow */
+    --dark: #1a1a1a;
+    --light: #fefefe;
+}
+
+body {
+    background-color: var(--dark);
+    color: var(--light);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+/* Image Styling */
+.chef-img {
+  width: 100px;
+  height: auto;
+  margin: 10px auto;
+  filter: drop-shadow(0 10px 10px rgba(0,0,0,0.3));
+  transition: 0.3s;
+}
+.menu-container {
+    max-width: 550px;
+    width: 100%;
+    background: #222;
+    padding: 30px;
+    border-radius: 30px;
+    border: 3px solid var(--primary);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    color: var(--secondary);
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.divider {
+    height: 4px;
+    width: 60px;
+    background: var(--primary);
+    margin: 15px auto;
+}
+
+.menu-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.menu-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px dashed #444;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+/* Interaction: Card lights up on hover */
+.menu-card:hover {
+    background: #2a2a2a;
+    border-radius: 12px;
+    transform: scale(1.02);
+    border-bottom-color: var(--secondary);
+}
+
+.menu-card h3 {
+    margin: 0;
+    color: var(--secondary);
+    font-size: 1.2rem;
+}
+
+.menu-card p {
+    margin: 5px 0 0;
+    font-size: 0.85rem;
+    color: #bbb;
+}
+
+.price {
+    font-weight: bold;
+    color: var(--primary);
+    font-size: 1.1rem;
+    background: var(--secondary);
+    padding: 5px 12px;
+    border-radius: 50px;
+    color: #000;
+}
+
+/* Highlight for Manchurian Dry/Gravy */
+.special {
+    border: 1px solid var(--primary);
+    border-radius: 15px;
+    background: rgba(211, 47, 47, 0.05);
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    color: var(--secondary);
+    font-size: 0.9rem;
+    font-style: italic;
+}
