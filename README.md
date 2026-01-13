@@ -16,9 +16,9 @@ This repository will be updated **daily** as I continue my learning journey.
 
 ##  Challenge Progress
 
-| Day | Topic | Code | Demo |
+| Day | Topic | Code | Result |
 |----:|-------|------|--------|
-| Day 01 | HTML Basics | [View Code](Code/Day1/index.html) |  https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day1/|
+| Day 01 | HTML Basics | [View Code](Code/Day1/index.html) |  [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day1)|
 | Day 02 | Text Tags | [View Code](Code/Day2/index.html) |
 | Day 03 | Link Tag | [View Code](Code/Day3/index.html) |
 | Day 04 | Image Tag | [View Code](Code/Day4/index.html) |
