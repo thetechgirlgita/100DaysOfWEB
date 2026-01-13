@@ -16,8 +16,8 @@ This repository will be updated **daily** as I continue my learning journey.
 
 ##  Challenge Progress
 
-| Day | Topic | Code |
-|----:|-------|------|
+| Day | Topic | Code | Demo |
+|----:|-------|------|--------|
 | Day 01 | HTML Basics | [View Code](Code/Day1/index.html) | 
 | Day 02 | Text Tags | [View Code](Code/Day2/index.html) |
 | Day 03 | Link Tag | [View Code](Code/Day3/index.html) |
