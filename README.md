@@ -49,3 +49,4 @@ This repository will be updated **daily** as I continue my learning journey.
 | Day 29 | CSS 3D Transform | [View Code](Code/Day29/index.html)|
 | Day 30 | CSS Responsive Bento UI  | [View Code](Code/Day30/index.html)|
 | Day 31 | CSS Menu Card  | [View Code](Code/Day31/index.html)|
+| Day 32 | CSS Notification Pop  | [View Code](Code/Day32/index.html)|
