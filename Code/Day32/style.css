@@ -1,0 +1,105 @@
+:root {
+    --orange: #c4a50b;
+    --black: #121212;
+}
+
+body {
+    background-color: var(--black);
+    margin: 0;
+    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/* 1. THE POP-UP BOX */
+.pop-up {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    width: 320px;
+    background: var(--black);
+    border: 2px solid var(--orange);
+    border-radius: 18px;
+    display: flex;
+    padding: 15px;
+    gap: 15px;
+    z-index: 1000;
+    
+    /* Animation: Slide in from the right */
+    animation: slideIn 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+/* 2. HIDE LOGIC (The Checkbox Hack) */
+/* When checkbox is checked, hide the pop-up instantly */
+#pop-toggle:checked + .pop-up {
+    transform: scale(0.9) translateX(150%);
+    opacity: 0;
+    transition: 0.4s ease-in;
+    pointer-events: none;
+}
+
+/* 3. STYLING THE INNER PARTS */
+.pop-icon {
+    background: var(--orange);
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    font-size: 26px;
+}
+
+.pop-content {
+    flex: 1;
+    color: var(--orange);
+}
+
+.pop-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.close {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 0 5px;
+}
+
+p {
+    margin: 0;
+    font-size: 13px;
+    color: #ffffff; /* White text for readability */
+}
+
+/* 4. THE PROGRESS TIMER */
+.timer {
+    height: 3px;
+    background: var(--orange);
+    margin-top: 12px;
+    width: 100%;
+    transform-origin: left;
+    animation: countdown 5s linear forwards;
+}
+
+/* 5. ANIMATIONS */
+@keyframes slideIn {
+    from { transform: translateX(120%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes countdown {
+    from { transform: scaleX(1); }
+    to { transform: scaleX(0); }
+}
+
+/* Center Text styling */
+.main-content {
+    text-align: center;
+    opacity: 0.5;
+}
