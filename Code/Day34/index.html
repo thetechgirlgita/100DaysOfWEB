@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 34 - Custom Alert System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <label for="alert-toggle" class="trigger-btn">Delete Account</label>
+
+    <input type="checkbox" id="alert-toggle" hidden>
+
+    <div class="overlay">
+        <div class="alert-card">
+            <div class="icon">⚠️</div>
+            <h2>Are you sure?</h2>
+            <p>This action cannot be undone. All your data will be permanently removed from our servers.</p>
+            
+            <div class="actions">
+                <label for="alert-toggle" class="btn-cancel">Cancel</label>
+                <label for="alert-toggle" class="btn-confirm">Yes, Delete</label>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
