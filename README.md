@@ -51,3 +51,4 @@ This repository will be updated **daily** as I continue my learning journey.
 | Day 31 | CSS Menu Card  | [View Code](Code/Day31/index.html)|
 | Day 32 | CSS Notification Pop  | [View Code](Code/Day32/index.html)|
 | Day 33 | CSS Invoice Print  | [View Code](Code/Day33/index.html)|
+| Day 34 | CSS Pop up box  | [View Code](Code/Day34/index.html)|
