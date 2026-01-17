@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 35 - Dark Mode Toggle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    
+    <input type="checkbox" id="theme-switch" class="theme-input" hidden>
+
+    <div class="page-wrapper">
+        <nav>
+            <div class="logo">SURAJ <span>FAST FOOD</span></div>
+            <label for="theme-switch" class="switch-label">
+                <span class="sun">☀️</span>
+                <span class="moon">🌙</span>
+                <div class="ball"></div>
+            </label>
+        </nav>
+
+        <main class="content">
+            <h1>Theme Switcher</h1>
+            <p>Day 35: Controlling the entire UI state using only CSS variables and a hidden checkbox.</p>
+            <div class="card">
+                <h3>Try the switch above!</h3>
+                <p>The colors transition smoothly using CSS variables.</p>
+            </div>
+        </main>
+    </div>
+    
+
+</body>
+</html>

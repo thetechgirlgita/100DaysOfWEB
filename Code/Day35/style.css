@@ -1,0 +1,87 @@
+
+:root {
+    /* Default Light Mode */
+    --bg: #f4f4f4;
+    --text: #121212;
+    --card-bg: #ffffff;
+    --accent: #f36b6b;
+    --card-shadow: rgba(0,0,0,0.1);
+}
+
+/* 2. THE LOGIC: Change variables when checked */
+#theme-switch:checked + .page-wrapper {
+    --bg: #121212;
+    --text: #f4f4f4;
+    --card-bg: #1e1e1e;
+    --card-shadow: rgba(0,0,0,0.5);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    transition: 0.5s; /* Smooth color transition */
+}
+
+.page-wrapper {
+    background-color: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    transition: background 0.4s, color 0.4s;
+    padding: 20px;
+}
+
+/* 3. THE TOGGLE SWITCH UI */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto 50px;
+}
+
+.switch-label {
+    width: 60px;
+    height: 30px;
+    background: #333;
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 5px;
+}
+
+.ball {
+    width: 26px;
+    height: 26px;
+    background: var(--accent);
+    border-radius: 50%;
+    position: absolute;
+    left: 2px;
+    transition: 0.3s cubic-bezier(1, 0, 0, 1);
+}
+
+/* Move the ball when checked */
+#theme-switch:checked + .page-wrapper .ball {
+    transform: translateX(30px);
+}
+
+/* 4. CONTENT STYLING */
+.content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.logo span { color: var(--accent); }
+
+.card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 20px;
+    margin-top: 30px;
+    box-shadow: 0 10px 30px var(--card-shadow);
+    border: 1px solid var(--accent);
+}
