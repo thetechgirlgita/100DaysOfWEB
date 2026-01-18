@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 36 - CSS Accordion</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="faq-container">
+        <h2>Frequently Asked Questions</h2>
+        
+        <div class="faq-item">
+            <input type="radio" name="faq" id="faq1" checked>
+            <label for="faq1" class="faq-question">
+                How long does delivery take?
+                <span class="arrow">▼</span>
+            </label>
+            <div class="faq-answer">
+                <p>Most orders are delivered within 30-45 minutes depending on your location and traffic conditions.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <input type="radio" name="faq" id="faq2">
+            <label for="faq2" class="faq-question">
+                Is there a minimum order value?
+                <span class="arrow">▼</span>
+            </label>
+            <div class="faq-answer">
+                <p>Yes, the minimum order value for free delivery is ₹200. For orders below that, a small fee applies.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <input type="radio" name="faq" id="faq3">
+            <label for="faq3" class="faq-question">
+                Do you offer party catering?
+                <span class="arrow">▼</span>
+            </label>
+            <div class="faq-answer">
+                <p>Absolutely! We offer special bulk rates for parties and corporate events. Contact us via the 'About' page.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

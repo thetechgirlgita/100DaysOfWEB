@@ -1,0 +1,95 @@
+:root {
+    --orange: #ff6b00;
+    --black: #121212;
+    --gray: #222;
+}
+
+body {
+    background-color: var(--black);
+    color: white;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.faq-container {
+    width: 90%;
+    max-width: 500px;
+}
+
+h2 {
+    color: var(--orange);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.faq-item {
+    margin-bottom: 10px;
+    border: 1px solid var(--gray);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Hide the actual radio button */
+input[type="radio"] {
+    display: none;
+}
+
+/* Question Styling */
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: var(--gray);
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.faq-question:hover {
+    background: #2a2a2a;
+    color: var(--orange);
+}
+
+.arrow {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+/* Answer Styling (Hidden by default) */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0, 1, 0, 1);
+    background: var(--black);
+}
+
+.faq-answer p {
+    padding: 20px;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+/* --- THE LOGIC --- */
+
+/* When radio is checked: Expand the answer */
+input[type="radio"]:checked ~ .faq-answer {
+    max-height: 200px; /* Large enough to fit content */
+    transition: max-height 0.4s cubic-bezier(1, 0, 1, 0);
+}
+
+/* Rotate the arrow when checked */
+input[type="radio"]:checked ~ .faq-question .arrow {
+    transform: rotate(180deg);
+    color: var(--orange);
+}
+
+/* Highlight the active question border */
+input[type="radio"]:checked + .faq-question {
+    border-bottom: 1px solid var(--orange);
+    color: var(--orange);
+}
