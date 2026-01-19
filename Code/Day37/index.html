@@ -2,73 +2,72 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 37 - Pure CSS Lightbox Gallery</title>
     <link rel="stylesheet" href="style.css">
-    <title>Suraj Fast Food - Day 31</title>
 </head>
 <body>
-    <div class="menu-card">
-        <header>
-            <div class="chef-container">
-                <img src="https://cdn-icons-png.flaticon.com/512/1830/1830839.png" alt="Chef tossing wok" class="chef-img">
-            </div>
-            <h1>SURAJ FAST FOOD</h1>
-            <p>Indo-Chinese Street Style</p>
-            <div class="divider"></div>
-        </header>
 
-        <section class="items-list">
-            <div class="item">
-                <div class="info">
-                    <h3>Veg Burger</h3>
-                    <p>Crispy patty & fresh veggies</p>
-                </div>
-                <span class="price">₹60</span>
-            </div>
-
-            <div class="item">
-                <div class="info">
-                    <h3>Manchow Soup</h3>
-                    <p>Spicy soy soup & crunchy noodles</p>
-                </div>
-                <span class="price">₹80</span>
-            </div>
-
-            <div class="item highlight">
-                <div class="info">
-                    <h3>Veg Manchurian</h3>
-                    <p>Dry or Gravy form available</p>
-                </div>
-                <span class="price">₹140</span>
-            </div>
-
-            <div class="item">
-                <div class="info">
-                    <h3>Chilly Paneer</h3>
-                    <p>Spicy wok-tossed paneer</p>
-                </div>
-                <span class="price">₹180</span>
-            </div>
-
-            <div class="item">
-                <div class="info">
-                    <h3>Veg Chowmein</h3>
-                    <p>Classic stir-fried noodles</p>
-                </div>
-                <span class="price">₹100</span>
-            </div>
-
-            <div class="item">
-                <div class="info">
-                    <h3>Veg Fried Rice</h3>
-                    <p>Aromatic tossed basmati rice</p>
-                </div>
-                <span class="price">₹120</span>
-            </div>
-        </section>
-
-        <footer>
-            <p>OPEN 11 AM - 10 PM</p>
-        </footer>
+    <div class="gallery-wrapper">
+        <h2>Our Signature Dishes</h2>
+        <div class="thumbnails">
+            <a href="#img1"><img src="https://carveyourcraving.com/wp-content/uploads/2016/02/manchurian6-e1542779664511.jpg" alt="Dish 1"></a>
+            <a href="#img2"><img src="https://tiffycooks.com/wp-content/uploads/2021/09/Screen-Shot-2021-09-21-at-5.21.37-PM.png" alt="Dish 2"></a>
+            <a href="#img3"><img src="https://www.cookwithmanali.com/wp-content/uploads/2016/01/Chilli-Paneer-Restaurant-Style.jpg" alt="Dish 3"></a>
+        </div>
     </div>
+
+    <div class="lightbox" id="img1">
+        <a href="#" class="close-area"></a>
+        <div class="content">
+            <img src="https://carveyourcraving.com/wp-content/uploads/2016/02/manchurian6-e1542779664511.jpg" alt="Full Dish 1">
+            <div class="recipe-overlay">
+                <h3>Veg Manchurian</h3>
+                <ul>
+                    <li>Cabbage & Carrot's fried balls</li>
+                    <li>Ginger-Garlic Paste</li>
+                    <li>Dark Soy Sauce</li>
+                    <li>Spring Onions</li>
+                </ul>
+            </div>
+            <a href="#" class="close-btn">&times;</a>
+        </div>
+    </div>
+
+    <div class="lightbox" id="img2">
+        <a href="#" class="close-area"></a>
+        <div class="content">
+            <img src="https://tiffycooks.com/wp-content/uploads/2021/09/Screen-Shot-2021-09-21-at-5.21.37-PM.png" alt="Full Dish 2">
+            <div class="recipe-overlay">
+                <h3>Veg Desi Noodles</h3>
+                <ul>
+                    <li>Noodles</li>
+                    <li>Seasonal Veggies</li>
+                    <li>Sesame Oil</li>
+                    <li>Black Pepper</li>
+                    <li>Soy Sauce </li>
+                </ul>
+            </div>
+            <a href="#" class="close-btn">&times;</a> 
+        </div>
+    </div>
+
+    <div class="lightbox" id="img3">
+        <a href="#" class="close-area"></a>
+        <div class="content">
+            <img src="https://www.cookwithmanali.com/wp-content/uploads/2016/01/Chilli-Paneer-Restaurant-Style.jpg" alt="Full Dish 3">
+            <div class="recipe-overlay">
+                <h3>Chilly Paneer</h3>
+                <ul>
+                    <li>Diced Paneer</li>
+                    <li>Capsicum & Onion</li>
+                    <li>Green Chillies</li>
+                    <li>Corn Flour Slurry</li>
+                </ul>
+            </div>
+            <a href="#" class="close-btn">&times;</a>
+        </div>
+    </div>
+
 </body>
 </html>

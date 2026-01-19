@@ -1,0 +1,148 @@
+:root {
+    --orange: #ff6b00;
+    --black: #121212;
+}
+
+body {
+    background: var(--black);
+    color: white;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 50px 20px;
+    margin: 0;
+}
+
+h2 { color: var(--orange); text-align: center; margin-bottom: 30px; }
+
+/* THUMBNAILS */
+.thumbnails {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.thumbnails img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 2px solid #333;
+    border-radius: 12px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.thumbnails img:hover {
+    border-color: var(--orange);
+    transform: scale(1.05);
+}
+
+/* LIGHTBOX SYSTEM */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.4s ease;
+    z-index: 1000;
+}
+
+/* The "Magic" Part */
+.lightbox:target {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox .content {
+    position: relative;
+    max-width: 90%;
+    max-height: 80%;
+    transform: scale(0.8);
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.lightbox:target .content {
+    transform: scale(1);
+}
+
+.lightbox img {
+    width: 100%;
+    border-radius: 8px;
+    border: 3px solid var(--orange);
+}
+
+.close-btn {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+/* Clicking the background also closes the lightbox */
+.close-area {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: default;
+}
+
+
+
+.content {
+    position: relative;
+    max-width: 90%;
+    max-height: 80vh;
+    overflow: hidden; /* Clips the recipe-overlay */
+    border-radius: 12px;
+    border: 3px solid var(--orange);
+}
+
+.recipe-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px); /* Glassmorphism */
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    
+    /* Animation: Slide up when the parent lightbox is targeted */
+    transform: translateY(100%);
+    transition: transform 0.5s ease 0.3s; 
+}
+
+
+.lightbox:target .recipe-overlay {
+    transform: translateY(0);
+}
+
+.recipe-overlay h3 {
+    margin: 0 0 10px 0;
+    color: var(--orange);
+    font-size: 20px;
+}
+
+.recipe-overlay ul {
+    margin: 0;
+    padding: 0 0 0 20px;
+    font-size: 14px;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns for ingredients */
+}
+
+.recipe-overlay li {
+    margin-bottom: 5px;
+    opacity: 0.9;
+}
