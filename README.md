@@ -55,3 +55,4 @@ This repository will be updated **daily** as I continue my learning journey.
 | Day 35 | CSS Dark Mode Toggle  | [View Code](Code/Day35/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day35)|
 | Day 36 | CSS FAQ  | [View Code](Code/Day36/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day36)|
 | Day 37 | CSS Image Gallery View woth Description  | [View Code](Code/Day37/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day37)|
+| Day 38 | CSS Image Gallery View woth Description  | [View Code](Code/Day37/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day37)|
