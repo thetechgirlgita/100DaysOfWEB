@@ -1,0 +1,118 @@
+:root {
+    --orange: #ff6b00;
+    --black: #121212;
+    --glass: rgba(255, 255, 255, 0.05);
+}
+
+body {
+    background-color: var(--black);
+    /* Decorative background blobs to show off the glass blur */
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(255, 107, 0, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(255, 107, 0, 0.15) 0%, transparent 40%);
+    color: white;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    text-align: center;
+}
+
+header h1 { color: var(--orange); margin-bottom: 5px; }
+header p { opacity: 0.6; margin-bottom: 50px; }
+
+/* THE GRID */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    align-items: center;
+}
+
+/* THE GLASS CARD */
+.card {
+    background: var(--glass);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px 30px;
+    border-radius: 24px;
+    position: relative;
+    transition: 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: var(--orange);
+}
+
+/* FEATURED CARD LOGIC */
+.featured {
+    background: rgba(255, 107, 0, 0.08);
+    border: 2px solid var(--orange);
+    transform: scale(1.08); /* Make it bigger */
+    z-index: 10;
+}
+
+.badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--orange);
+    color: var(--black);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* UI ELEMENTS */
+.price {
+    font-size: 40px;
+    font-weight: 800;
+    margin: 20px 0;
+    color: white;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.btn {
+    width: 100%;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid var(--orange);
+    background: transparent;
+    color: var(--orange);
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: var(--orange);
+    color: var(--black);
+}
+
+.btn:hover {
+    background: var(--orange);
+    color: var(--black);
+}
