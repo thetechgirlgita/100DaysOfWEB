@@ -61,7 +61,7 @@ p { opacity: 0.5; font-size: 14px; margin-bottom: 40px; }
     transition: 0.3s;
 }
 
-/* When focused or NOT showing placeholder (meaning there is text) */
+/* When focused */
 .input-group input:focus ~ label,
 .input-group input:not(:placeholder-shown) ~ label {
     top: -10px;
