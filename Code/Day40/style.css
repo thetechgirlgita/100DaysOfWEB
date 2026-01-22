@@ -1,0 +1,90 @@
+:root {
+    --neon: #ff6b00;
+    --dark: #050505;
+}
+
+body {
+    background-color: var(--dark);
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.skill-section {
+    text-align: center;
+    perspective: 1000px; /* Essential for 3D */
+}
+
+.milestone-text {
+    font-size: 12px;
+    letter-spacing: 5px;
+    color: var(--neon);
+    margin-bottom: 50px;
+    opacity: 0.7;
+}
+
+.prism-grid {
+    display: flex;
+    gap: 30px;
+}
+
+.prism-card {
+    width: 250px;
+    height: 350px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    cursor: pointer;
+}
+
+/* THE 3D TILT EFFECT */
+.prism-card:hover {
+    transform: rotateY(15deg) rotateX(10deg);
+    border-color: var(--neon);
+    background: rgba(255, 107, 0, 0.05);
+}
+
+.card-content {
+    position: absolute;
+    inset: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateZ(50px); /* Floats the text 50px in front */
+    pointer-events: none;
+}
+
+.icon {
+    font-size: 40px;
+    font-weight: 900;
+    margin-bottom: 20px;
+    color: var(--neon);
+    text-shadow: 0 0 20px rgba(255, 107, 0, 0.5);
+}
+
+h3 { font-size: 22px; margin: 0; }
+p { font-size: 14px; opacity: 0.6; line-height: 1.6; }
+
+/* Glowing highlight that follows the mouse  */
+.prism-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(255,107,0,0.2) 0%, transparent 70%);
+    opacity: 0;
+    transition: 0.5s;
+    border-radius: 20px;
+}
+
+.prism-card:hover::after {
+    opacity: 1;
+}
