@@ -57,3 +57,4 @@ This repository will be updated **daily** as I continue my learning journey.
 | Day 37 | CSS Image Gallery View with Description  | [View Code](Code/Day37/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day37)|
 | Day 38 | CSS Glassmorphic Pricing Table  | [View Code](Code/Day38/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day38)|
 | Day 39 | CSS Glassmorphic Login Page  | [View Code](Code/Day39/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day39)|
+| Day 40 | CSS 3D  | [View Code](Code/Day40/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day40)|
