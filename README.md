@@ -59,3 +59,4 @@ This repository will be updated **daily** as I continue my learning journey.
 | Day 39 | CSS Glassmorphic Login Page  | [View Code](Code/Day39/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day39)|
 | Day 40 | CSS 3D  | [View Code](Code/Day40/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day40)|
 | Day 41 | CSS 3D Infinite Carousel | [View Code](Code/Day41/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day41)|
+| Day 42 | CSS 3D Memebership Card | [View Code](Code/Day42/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day42)|
