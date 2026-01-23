@@ -1,0 +1,84 @@
+:root {
+    --neon: #ff6b00;
+    --dark: #050505;
+}
+
+body {
+    background: var(--dark);
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+}
+
+.scene {
+    width: 250px;
+    height: 350px;
+    perspective: 1000px; /* Depth of the 3D room */
+}
+
+.carousel {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    animation: rotateCarousel 15s infinite linear;
+}
+
+/* Pause animation on hover */
+.carousel:hover {
+    animation-play-state: paused;
+}
+
+.carousel-item {
+    position: absolute;
+    width: 250px;
+    height: 350px;
+    left: 10px;
+    top: 10px;
+    border: 2px solid var(--neon);
+    border-radius: 15px;
+    overflow: hidden;
+    background: #000;
+}
+
+/* Positioning cards in a triangle (360 / 3 = 120 degrees) */
+/* translateZ(300px) pushes them out from the center */
+.carousel-item:nth-child(1) { transform: rotateY(0deg) translateZ(300px); }
+.carousel-item:nth-child(2) { transform: rotateY(120deg) translateZ(300px); }
+.carousel-item:nth-child(3) { transform: rotateY(240deg) translateZ(300px); }
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+    transition: 0.5s;
+}
+
+.carousel-item:hover img {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.label {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-weight: 800;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* THE ROTATION MAGIC */
+@keyframes rotateCarousel {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
+}
