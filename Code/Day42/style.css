@@ -1,0 +1,94 @@
+:root {
+    --neon: #ff6b00;
+    --dark: #0a0a0a;
+}
+
+body {
+    background-color: var(--dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.card-container {
+    width: 400px;
+    height: 250px;
+    perspective: 1000px; /* Essential for 3D depth */
+}
+
+.flip-card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+/* THE FLIP */
+.card-container:hover .flip-card {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* This hides the reverse side */
+    border-radius: 20px;
+    padding: 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* FRONT STYLING */
+.card-front {
+    background: linear-gradient(45deg, #1a1a1a, #333);
+    border: 1px solid rgba(255, 107, 0, 0.3);
+    color: white;
+}
+
+.chip {
+    width: 50px;
+    height: 40px;
+    background: linear-gradient(45deg, #d4af37, #f9f295);
+    border-radius: 8px;
+}
+
+.number { font-size: 22px; letter-spacing: 3px; margin: 20px 0; }
+
+/* BACK STYLING */
+.card-back {
+    background: linear-gradient(45deg, #222, #000);
+    color: white;
+    transform: rotateY(180deg); /* Pre-rotate the back so it faces away */
+    text-align: right;
+}
+
+.magnetic-strip {
+    background: #000;
+    height: 45px;
+    width: 118%;
+    margin-left: -30px;
+}
+
+.signature-area {
+    background: white;
+    height: 40px;
+    width: 80%;
+    margin: 20px 0;
+    color: black;
+    display: flex;
+    align-items: center;
+    padding-right: 15px;
+    justify-content: flex-end;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.back-text { font-size: 10px; opacity: 0.6; line-height: 1.4; }
