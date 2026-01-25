@@ -1,0 +1,104 @@
+:root {
+    --neon: #ff6b00;
+    --dark: #0a0a0a;
+    --card-bg: #1a1a1a;
+}
+
+body {
+    background-color: var(--dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    perspective: 1500px; /* Essential for the unfolding depth */
+}
+
+.menu-card {
+    width: 320px;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.fold {
+    width: 100%;
+    height: 140px;
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 107, 0, 0.1);
+    position: relative;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+/* FOLD 1: The Top Hinge */
+.fold-top {
+    z-index: 3;
+    transform-origin: bottom; /* Pivot from the bottom edge */
+    background: var(--neon);
+    color: var(--dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.fold-top h2 { margin: 10px 0; font-size: 20px; text-transform: uppercase; }
+.hint { font-size: 10px; font-weight: bold; opacity: 0.7; }
+
+/* FOLD 2: The Middle  */
+.fold-middle {
+    z-index: 2;
+    transform-origin: top;
+    transform: rotateX(-90deg); /* Folded back */
+    opacity: 0;
+}
+
+.fold-middle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* FOLD 3: The Bottom  */
+.fold-bottom {
+    z-index: 1;
+    transform-origin: top;
+    transform: rotateX(-90deg); /* Folded back */
+    opacity: 0;
+    background: #222;
+    padding: 20px;
+    box-sizing: border-box;
+    color: white;
+}
+
+/* THE UNFOLDING INTERACTION */
+.menu-card:hover .fold-top {
+    transform: rotateX(30deg) translateY(-10px);
+    background: #d45900; /* Darken as it tilts */
+}
+
+.menu-card:hover .fold-middle {
+    transform: rotateX(0deg);
+    opacity: 1;
+}
+
+.menu-card:hover .fold-bottom {
+    transform: rotateX(0deg);
+    opacity: 1;
+    transition-delay: 0.15s; /* Creates the "cascade" effect */
+}
+
+/* UI Elements */
+.details p { font-size: 12px; opacity: 0.8; margin-bottom: 15px; }
+.price-row { display: flex; justify-content: space-between; align-items: center; }
+.price { font-size: 22px; font-weight: bold; color: var(--neon); }
+.add-btn {
+    background: var(--neon);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
