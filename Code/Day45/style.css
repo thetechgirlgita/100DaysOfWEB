@@ -1,0 +1,77 @@
+:root {
+    --neon: #ff6b00;
+    --dark: #050505;
+}
+
+body {
+    background: var(--dark);
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+}
+
+.skill-scene {
+    perspective: 1000px; /* The 'depth' of the room */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cloud-container {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    transform-style: preserve-3d;
+    transition: transform 0.1s ease-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    color: white;
+    font-size: 3rem;
+    letter-spacing: 10px;
+    opacity: 0.1;
+    position: absolute;
+    transform: translateZ(-100px);
+}
+
+.skill-item {
+    position: absolute;
+    padding: 15px 30px;
+    background: rgba(255, 107, 0, 0.05);
+    border: 1px solid rgba(255, 107, 0, 0.3);
+    color: white;
+    border-radius: 50px;
+    font-weight: bold;
+    backdrop-filter: blur(5px);
+    transition: 0.5s ease;
+    cursor: default;
+}
+
+/* RANDOM POSITIONING & DEPTHS */
+.html  { top: 20%; left: 10%; transform: translateZ(100px); }
+.css   { top: 60%; left: 20%; transform: translateZ(200px); }
+.js    { top: 10%; right: 15%; transform: translateZ(150px); }
+.react { bottom: 20%; right: 10%; transform: translateZ(250px); border-color: var(--neon); color: var(--neon); }
+.node  { top: 45%; left: 45%; transform: translateZ(50px); }
+.git   { bottom: 10%; left: 30%; transform: translateZ(180px); }
+
+/* INTERACTION: Tilt the whole container */
+.skill-scene:hover .cloud-container {
+    transform: rotateX(10deg) rotateY(-15deg);
+}
+
+.skill-item:hover {
+    background: var(--neon);
+    color: var(--dark);
+    transform: translateZ(300px) scale(1.2); /* Pulls it even closer to user */
+    z-index: 100;
+}
