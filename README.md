@@ -62,3 +62,4 @@ This repository will be updated **daily** as I continue my learning journey.
 | Day 42 | CSS 3D Memebership Card | [View Code](Code/Day42/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day42)|
 | Day 43 | CSS Unfolding Menu Card | [View Code](Code/Day43/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day43)|
 | Day 44 | CSS Mobile Mockup | [View Code](Code/Day44/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day44)|
+| Day 45 | CSS Mobile Mockup | [View Code](Code/Day45/index.html)| [View Result 5ere](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day45)|
