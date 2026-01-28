@@ -63,3 +63,4 @@ This repository will be updated **daily** as I continue my learning journey.
 | Day 43 | CSS Unfolding Menu Card | [View Code](Code/Day43/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day43)|
 | Day 44 | CSS Mobile Mockup | [View Code](Code/Day44/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day44)|
 | Day 45 | CSS Mobile Mockup | [View Code](Code/Day45/index.html)| [View Result 5ere](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day45)|
+| Day 46 | CSS Glassmorphism Tribute to Arijit Singh | [View Code](Code/Day46/index.html)| [View Result 5ere](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day46)|
