@@ -1,0 +1,138 @@
+:root {
+    --neon: #ff6b00;
+    --dark: #121212;
+}
+
+body {
+    background: #080808;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10;
+    font-family: 'Inter', sans-serif;
+    perspective: 1200px;
+}
+
+.player-container {
+    position: relative;
+    width: 340px;
+    height: 320px;
+    transform-style: preserve-3d;
+    transition: transform 0.7s ease;
+}
+
+/* THE SLEEVE */
+.sleeve {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #1a1a1a;
+    z-index: 2;
+    border-radius: 12px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.7);
+    border: 1px solid rgba(255,255,255,0.05);
+    overflow: hidden;
+}
+
+.cover-art {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #222, var(--dark));
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.tag { color: var(--neon); font-size: 10px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; }
+.info h2 { color: white; margin: 5px 0; font-size: 26px; font-weight: 800; }
+.info p { color: white; opacity: 0.5; margin: 0; font-size: 14px; }
+
+/* THE VINYL RECORD */
+.vinyl {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, #333 0%, #000 100%);
+    border-radius: 50%;
+    z-index: 1;
+    transition: all 0.9s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 30px rgba(0,0,0,0.8);
+}
+
+/* Vinyl Grooves */
+.vinyl::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: repeating-radial-gradient(circle, transparent 0, transparent 2px, rgba(255,255,255,0.03) 3px);
+}
+
+
+.label {
+    width: 100px;
+    height: 100px;
+    background: var(--neon);
+    border-radius: 50%;
+    border: 10px solid #111; /* Thicker border looks like a real record label */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+}
+
+.vinyl-logo {
+    color: #000;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-family: 'Arial Black', sans-serif;
+    /* This keeps the text looking crisp while spinning */
+    text-shadow: 1px 1px 0px rgba(255,255,255,0.2);
+}
+
+/* Add a small 'center hole' for realism */
+.label::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #080808;
+    border-radius: 50%;
+    box-shadow: inset 0 2px 5px rgba(255,255,255,0.1);
+}
+
+
+/* THE INTERACTION */
+.player-container:hover .vinyl {
+    right: -160px; /* Pops out further */
+    transform: rotate(360deg);
+}
+
+.player-container:hover {
+    transform: rotateY(-15deg) rotateX(5deg);
+}
+
+/* Spin animation */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.player-container:hover .vinyl {
+    animation: spin 4s linear infinite 0.9s;
+}
+
+/* Zoom effect on your picture when it pops out */
+.player-container:hover .profile-pic {
+    transform: scale(1.1);
+}
