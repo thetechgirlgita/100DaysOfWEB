@@ -1,138 +1,200 @@
 :root {
-    --neon: #ff6b00;
-    --dark: #121212;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --accent: #00d2ff; /* Deep sky blue accent */
 }
 
 body {
-    background: #080808;
+    background: #0a0a0b;
     height: 100vh;
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10;
     font-family: 'Inter', sans-serif;
-    perspective: 1200px;
-}
-
-.player-container {
-    position: relative;
-    width: 340px;
-    height: 320px;
-    transform-style: preserve-3d;
-    transition: transform 0.7s ease;
-}
-
-/* THE SLEEVE */
-.sleeve {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #1a1a1a;
-    z-index: 2;
-    border-radius: 12px;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.7);
-    border: 1px solid rgba(255,255,255,0.05);
+    perspective: 1500px;
     overflow: hidden;
 }
 
-.cover-art {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #222, var(--dark));
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 30px;
-    box-sizing: border-box;
+.player-wrapper {
+    position: relative;
+    width: 320px;
+    height: 420px;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
 }
 
-.tag { color: var(--neon); font-size: 10px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; }
-.info h2 { color: white; margin: 5px 0; font-size: 26px; font-weight: 800; }
-.info p { color: white; opacity: 0.5; margin: 0; font-size: 14px; }
+.player-wrapper:hover {
+    transform: rotateY(-15deg) rotateX(5deg);
+}
 
-/* THE VINYL RECORD */
-.vinyl {
+/* THE GLASS SLEEVE */
+.glass-sleeve {
     position: absolute;
-    top: 10px;
-    right: 5px;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, #333 0%, #000 100%);
-    border-radius: 50%;
-    z-index: 1;
-    transition: all 0.9s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    width: 100%;
+    height: 100%;
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    z-index: 2;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+}
+
+.artist-image {
+    width: 100%;
+    height: 60%;
+    overflow: hidden;
+}
+
+.artist-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+    transition: 0.5s;
+}
+
+.glass-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.category {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+h1 {
+    color: white;
+    margin: 5px 0;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+p {
+    color: rgba(255,255,255,0.5);
+    font-size: 13px;
+    margin: 0;
+}
+
+.play-btn {
+    background: white;
+    border: none;
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: 800;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.3s;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 0 30px rgba(0,0,0,0.8);
+    gap: 10px;
 }
 
-/* Vinyl Grooves */
-.vinyl::after {
+.play-btn:hover {
+    background: var(--accent);
+    color: white;
+}
+
+/* THE IRIDESCENT CD */
+.cd-disc {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    width: 300px;
+    height: 300px;
+    background: #222; /* Fallback */
+    border-radius: 50%;
+    z-index: 1;
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    overflow: hidden;
+}
+
+/* Iridescent effect for the back of the CD */
+.iridescent-layer {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, 
+        transparent 30%, 
+        rgba(0, 210, 255, 0.2) 40%, 
+        rgba(144, 0, 255, 0.2) 50%, 
+        rgba(0, 255, 144, 0.2) 60%, 
+        transparent 70%
+    );
+    filter: blur(2px);
+}
+
+.cd-disc::before {
     content: '';
     position: absolute;
     inset: 0;
     border-radius: 50%;
-    background: repeating-radial-gradient(circle, transparent 0, transparent 2px, rgba(255,255,255,0.03) 3px);
+    background: repeating-radial-gradient(
+        circle,
+        rgba(255,255,255,0.05) 0px,
+        rgba(255,255,255,0.05) 1px,
+        transparent 1px,
+        transparent 3px
+    );
 }
 
-
-.label {
-    width: 100px;
-    height: 100px;
-    background: var(--neon);
+.cd-center {
+    width: 90px;
+    height: 90px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(5px);
     border-radius: 50%;
-    border: 10px solid #111; /* Thicker border looks like a real record label */
+    border: 1px solid rgba(255,255,255,0.2);
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+    z-index: 5;
 }
 
-.vinyl-logo {
-    color: #000;
-    font-size: 32px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    font-family: 'Arial Black', sans-serif;
-    /* This keeps the text looking crisp while spinning */
-    text-shadow: 1px 1px 0px rgba(255,255,255,0.2);
-}
-
-/* Add a small 'center hole' for realism */
-.label::after {
-    content: '';
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    background: #080808;
+.hole {
+    width: 20px;
+    height: 20px;
+    background: #0a0a0b;
     border-radius: 50%;
-    box-shadow: inset 0 2px 5px rgba(255,255,255,0.1);
 }
 
-
-/* THE INTERACTION */
-.player-container:hover .vinyl {
-    right: -160px; /* Pops out further */
-    transform: rotate(360deg);
+.disc-label {
+    position: absolute;
+    bottom: 40px;
+    color: rgba(255,255,255,0.3);
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 5px;
 }
 
-.player-container:hover {
-    transform: rotateY(-15deg) rotateX(5deg);
+/* INTERACTION: POP UP */
+.player-wrapper:hover .cd-disc {
+    /* Slides UP and spins */
+    transform: translateY(-140px) rotate(360deg); 
 }
 
-/* Spin animation */
+/* Continuous spin after pop up */
 @keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from { transform: translateY(-140px) rotate(0deg); }
+    to { transform: translateY(-140px) rotate(360deg); }
 }
 
-.player-container:hover .vinyl {
-    animation: spin 4s linear infinite 0.9s;
-}
-
-/* Zoom effect on your picture when it pops out */
-.player-container:hover .profile-pic {
-    transform: scale(1.1);
+.player-wrapper:hover .cd-disc {
+    animation: spin 4s linear infinite 0.8s;
 }
