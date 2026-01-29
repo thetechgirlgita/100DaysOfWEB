@@ -1,0 +1,71 @@
+body {
+    background: #0f172a;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.scene {
+    width: 100px;
+    height: 100px;
+    perspective: 600px;
+}
+
+.dice {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    /* The dice is spinning at a high speed */
+    animation: randomSpin 1.2s infinite steps(6);
+}
+
+/* When you hover, the animation stops instantly */
+.scene:hover .dice {
+    animation-play-state: paused;
+}
+
+.face {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: white;
+    border: 2px solid #334155;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    border-radius: 12px;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.1);
+}
+
+/* Positioning faces */
+.front  { transform: rotateY(0deg) translateZ(50px); }
+.back   { transform: rotateY(180deg) translateZ(50px); }
+.right  { transform: rotateY(90deg) translateZ(50px); }
+.left   { transform: rotateY(-90deg) translateZ(50px); }
+.top    { transform: rotateX(90deg) translateZ(50px); }
+.bottom { transform: rotateX(-90deg) translateZ(50px); }
+
+/* This animation moves through all 6 sides rapidly */
+@keyframes randomSpin {
+    0%   { transform: rotateX(0deg) rotateY(0deg); }      /* Face 1 */
+    16.6% { transform: rotateX(180deg) rotateY(0deg); }    /* Face 6 */
+    33.3% { transform: rotateX(0deg) rotateY(90deg); }     /* Face 2 */
+    50%   { transform: rotateX(0deg) rotateY(-90deg); }    /* Face 5 */
+    66.6% { transform: rotateX(90deg) rotateY(0deg); }     /* Face 3 */
+    83.3% { transform: rotateX(-90deg) rotateY(0deg); }    /* Face 4 */
+    100% { transform: rotateX(0deg) rotateY(0deg); }       /* Loop back */
+}
+
+.hint {
+    margin-top: 50px;
+    color: #38bdf8;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
