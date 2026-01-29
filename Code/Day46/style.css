@@ -1,11 +1,11 @@
 :root {
-    --glass-bg: rgba(255, 255, 255, 0.05);
-    --glass-border: rgba(255, 255, 255, 0.1);
-    --accent: #00d2ff; /* Deep sky blue accent */
+    --glass-bg: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --accent: #00d2ff;
 }
 
 body {
-    background: #0a0a0b;
+    background: #050505; /* Deep black for contrast */
     height: 100vh;
     margin: 0;
     display: flex;
@@ -13,19 +13,20 @@ body {
     align-items: center;
     font-family: 'Inter', sans-serif;
     perspective: 1500px;
-    overflow: hidden;
 }
 
 .player-wrapper {
     position: relative;
     width: 320px;
-    height: 420px;
+    height: 440px;
     transform-style: preserve-3d;
     transition: transform 0.6s ease;
+    cursor: pointer;
 }
 
+/* 3D Tilt Effect on Hover */
 .player-wrapper:hover {
-    transform: rotateY(-15deg) rotateX(5deg);
+    transform: rotateY(-18deg) rotateX(8deg);
 }
 
 /* THE GLASS SLEEVE */
@@ -34,33 +35,50 @@ body {
     width: 100%;
     height: 100%;
     background: var(--glass-bg);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border: 1px solid var(--glass-border);
-    border-radius: 20px;
+    border-radius: 24px;
     z-index: 2;
     overflow: hidden;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.7);
     display: flex;
     flex-direction: column;
 }
 
+/* Reflection Shimmer Effect */
+.glass-sleeve::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transform: skewX(-20deg);
+    transition: 0.8s;
+}
+
+.player-wrapper:hover .glass-sleeve::before {
+    left: 150%;
+}
+
 .artist-image {
     width: 100%;
-    height: 60%;
+    height: 65%;
     overflow: hidden;
+    border-bottom: 1px solid var(--glass-border);
 }
 
 .artist-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.8;
-    transition: 0.5s;
+    filter: grayscale(20%) contrast(1.1);
 }
 
 .glass-content {
-    padding: 20px;
+    padding: 24px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -68,97 +86,89 @@ body {
 }
 
 .category {
-    font-size: 10px;
+    font-size: 9px;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     color: var(--accent);
     font-weight: 600;
 }
 
 h1 {
     color: white;
-    margin: 5px 0;
-    font-size: 24px;
+    margin: 8px 0 4px 0;
+    font-size: 26px;
     font-weight: 800;
 }
 
 p {
     color: rgba(255,255,255,0.5);
-    font-size: 13px;
+    font-size: 14px;
     margin: 0;
 }
 
-.play-btn {
-    background: white;
-    border: none;
-    padding: 12px;
-    border-radius: 12px;
-    font-weight: 800;
-    font-size: 12px;
-    cursor: pointer;
-    transition: 0.3s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+.status-bar {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid var(--glass-border);
 }
 
-.play-btn:hover {
-    background: var(--accent);
-    color: white;
+.playing-text {
+    font-size: 10px;
+    color: var(--accent);
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
 /* THE IRIDESCENT CD */
 .cd-disc {
     position: absolute;
-    top: 20px;
+    top: 25px;
     left: 10px;
     width: 300px;
     height: 300px;
-    background: #222; /* Fallback */
+    background: #1a1a1a;
     border-radius: 50%;
     z-index: 1;
     transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 0 30px rgba(0,0,0,0.5);
-    overflow: hidden;
+    box-shadow: 0 0 40px rgba(0,0,0,0.8);
 }
 
-/* Iridescent effect for the back of the CD */
+/* CD Data Grooves */
+.cd-disc::after {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    border-radius: 50%;
+    background: repeating-radial-gradient(
+        circle,
+        rgba(255,255,255,0.03) 0px,
+        rgba(255,255,255,0.03) 1px,
+        transparent 1px,
+        transparent 4px
+    );
+}
+
 .iridescent-layer {
     position: absolute;
     inset: 0;
     background: radial-gradient(circle at center, 
         transparent 30%, 
-        rgba(0, 210, 255, 0.2) 40%, 
-        rgba(144, 0, 255, 0.2) 50%, 
-        rgba(0, 255, 144, 0.2) 60%, 
+        rgba(0, 210, 255, 0.15) 40%, 
+        rgba(144, 0, 255, 0.15) 50%, 
+        rgba(0, 255, 144, 0.15) 60%, 
         transparent 70%
     );
-    filter: blur(2px);
-}
-
-.cd-disc::before {
-    content: '';
-    position: absolute;
-    inset: 0;
     border-radius: 50%;
-    background: repeating-radial-gradient(
-        circle,
-        rgba(255,255,255,0.05) 0px,
-        rgba(255,255,255,0.05) 1px,
-        transparent 1px,
-        transparent 3px
-    );
 }
 
 .cd-center {
-    width: 90px;
-    height: 90px;
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(5px);
+    width: 85px;
+    height: 85px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
     border-radius: 50%;
     border: 1px solid rgba(255,255,255,0.2);
     display: flex;
@@ -168,33 +178,33 @@ p {
 }
 
 .hole {
-    width: 20px;
-    height: 20px;
-    background: #0a0a0b;
+    width: 22px;
+    height: 22px;
+    background: #050505;
     border-radius: 50%;
+    box-shadow: inset 0 0 5px rgba(255,255,255,0.2);
 }
 
 .disc-label {
     position: absolute;
-    bottom: 40px;
-    color: rgba(255,255,255,0.3);
-    font-size: 8px;
+    bottom: 45px;
+    color: rgba(255,255,255,0.2);
+    font-size: 7px;
     font-weight: 900;
-    letter-spacing: 5px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
 }
 
-/* INTERACTION: POP UP */
+/* EJECT & SPIN ANIMATION */
 .player-wrapper:hover .cd-disc {
-    /* Slides UP and spins */
-    transform: translateY(-140px) rotate(360deg); 
+    transform: translateY(-150px) rotate(360deg);
 }
 
-/* Continuous spin after pop up */
 @keyframes spin {
-    from { transform: translateY(-140px) rotate(0deg); }
-    to { transform: translateY(-140px) rotate(360deg); }
+    from { transform: translateY(-150px) rotate(0deg); }
+    to { transform: translateY(-150px) rotate(360deg); }
 }
 
 .player-wrapper:hover .cd-disc {
-    animation: spin 4s linear infinite 0.8s;
+    animation: spin 5s linear infinite 0.8s;
 }

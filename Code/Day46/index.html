@@ -3,41 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arijit Singh - Glassmorphism CD</title>
+    <title>Arijit Singh | Day 46 Tribute</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="glass-scene">
-        <div class="player-wrapper">
-            <div class="cd-disc">
-                <div class="iridescent-layer"></div>
-                <div class="cd-center">
-                    <div class="hole"></div>
-                </div>
-                <div class="disc-label"></div>
+    <div class="player-wrapper" 
+         onmouseenter="document.getElementById('audio').play()" 
+         onmouseleave="document.getElementById('audio').pause()">
+        
+        <div class="cd-disc">
+            <div class="iridescent-layer"></div>
+            <div class="cd-center">
+                <div class="hole"></div>
             </div>
+            <div class="disc-label">ARIJIT SINGH</div>
+        </div>
 
-            <div class="glass-sleeve">
-                <div class="artist-image">
-                    <img src="https://w0.peakpx.com/wallpaper/216/433/HD-wallpaper-arijit-singh-biography-songs-marriage-family-awards-achievements.jpg" alt="Arijit Singh">
+        <div class="glass-sleeve">
+            <div class="artist-image">
+                <img src="https://w0.peakpx.com/wallpaper/216/433/HD-wallpaper-arijit-singh-biography-songs-marriage-family-awards-achievements.jpg" alt="Arijit Singh">
+            </div>
+            
+            <div class="glass-content">
+                <div class="info">
+                    <span class="category">Legacy Edition (2011-2026)</span>
+                    <h1>Arijit Singh</h1>
+                    <p>Melody for the Code</p>
                 </div>
-                <div class="glass-content">
-                    <div class="info">
-                        <span class="category">Bollywood Legend</span>
-                        <h1>Arijit Singh</h1>
-                        <p>The Voice of Soul</p>
-                    </div>
-                    <button class="play-btn" onclick="document.getElementById('audio').play()">
-                        PLAY NOW <span>▶</span>
-                    </button>
+                <div class="status-bar">
+                    <span class="playing-text">HOVER TO EJECT & PLAY</span>
                 </div>
             </div>
         </div>
     </div>
 
-    <audio id="audio" src="judaai.mp3"></audio>
+    <audio id="audio" src="judaai.mp3" loop></audio>
 
 </body>
 </html>
