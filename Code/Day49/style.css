@@ -1,0 +1,80 @@
+body {
+    background: radial-gradient(circle at center, #1b2735 0%, #090a0f 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    overflow: hidden;
+    perspective: 1000px;
+    font-family: 'Arial', sans-serif;
+}
+
+.saturn-system {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    transform: rotateX(75deg) rotateY(-10deg); /* The  Tilt */
+    animation: slowRotate 20s infinite linear;
+}
+
+/* THE PLANET SPHERE */
+.planet {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    margin-top: -50px;
+    margin-left: -50px;
+    background: #f4d03f; 
+    border-radius: 50%;
+    transform: rotateX(-75deg); /* Counter-tilt to stay round */
+    box-shadow: inset -20px -20px 50px rgba(0,0,0,0.8), 
+                0 0 20px rgba(244, 208, 63, 0.3);
+}
+
+/* THE RINGS */
+.saturn-rings {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 240px;
+    height: 240px;
+    margin-top: -120px;
+    margin-left: -120px;
+    border-radius: 50%;
+    /* Creating the ring texture using gradients */
+    background: radial-gradient(transparent 50%, 
+                rgba(150, 120, 80, 0.8) 55%, 
+                rgba(100, 80, 50, 0.4) 60%, 
+                transparent 62%,
+                rgba(150, 120, 80, 0.5) 65%,
+                transparent 70%);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* ORBITING */
+.orbit-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    /* Rotation math */
+    animation: orbitSkills 8s infinite linear;
+    animation-delay: var(--d);
+}
+
+@keyframes slowRotate {
+    from { transform: rotateX(75deg) rotateY(0deg); }
+    to { transform: rotateX(75deg) rotateY(360deg); }
+}
+
+@keyframes orbitSkills {
+    from { transform: rotateY(0deg) translateX(160px) rotateY(0deg) rotateX(-75deg); }
+    to { transform: rotateY(360deg) translateX(160px) rotateY(-360deg) rotateX(-75deg); }
+}
