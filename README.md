@@ -65,3 +65,4 @@ This repository will be updated **daily** as I continue my learning journey.
 | Day 45 | CSS Mobile Mockup | [View Code](Code/Day45/index.html)| [View Result 5ere](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day45)|
 | Day 46 | CSS Glassmorphism Tribute to Arijit Singh | [View Code](Code/Day46/index.html)| [View Result 5ere](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day46)|
 | Day 47 | CSS Cube | [View Code](Code/Day47/index.html)| [View Result 5ere](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day47)|
+| Day 48 | CSS Folder | [View Code](Code/Day48/index.html)| [View Result 5ere](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day48)|
