@@ -67,3 +67,4 @@ This repository will be updated **daily** as I continue my learning journey.
 | Day 47 | CSS Cube | [View Code](Code/Day47/index.html)| [View Result 5ere](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day47)|
 | Day 48 | CSS Folder | [View Code](Code/Day48/index.html)| [View Result 5ere](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day48)|
 | Day 49 | CSS Saturn Ring 3D | [View Code](Code/Day49/index.html)| [View Result 5ere](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day49)|
+| Day 50 | CSS Professional Portfolio | [View Code](Code/Day50/index.html)| [View Result 5ere](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day50)|
