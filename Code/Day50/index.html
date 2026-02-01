@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gita Khanal | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="glow" id="mouseGlow"></div>
+
+    <header>
+        <img src="profile.picture.jpg" alt="Gita Khanal" class="profile-img">
+        <div class="badge">Junior WEB Developer</div>
+        <h1>Gita Khanal</h1>
+        <p class="hero-sub">Computer Programming Graduate from Seneca College. </p>
+    </header>
+
+    <div class="container">
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Programming</h3>
+                    <div class="tags">
+                        <span class="tag">Flutter</span> <span class="tag">Dart</span> 
+                        <span class="tag">C++</span> <span class="tag">HTML5</span> 
+                        <span class="tag">C</span> <span class="tag">Python</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>IT Support</h3>
+                    <p><li>Troubleshooting Routers </li>
+                        <li>POS Systems</li>  <li> Ticketing </li> </p>
+                    
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="card">
+                <h3>Amusement Associate</h3>
+                <p class="company">Player One Amusement Group | June 2023 - Present </p>
+                <ul>
+                    <li>Technical troubleshooting for arcade machines and networking. </li>
+                    <li>Managing POS transactions and customer-facing problem solving. </li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Flutter Developer Engineer</h3>
+                <p class="company">Pahadi.research | Jan 2023 - Aug 2023 </p>
+                <p>Developing high-performance mobile applications using the Flutter framework. </p>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="card">
+                <h2>Education</h2>
+                <p><strong>Seneca College</strong><br>Diploma in Computer Programming (2023-2025)</p>
+                <p> <li>Data Structures and Algorithms</li> <li>Database Management Systems</li> 
+                    <li>Web Development</li> <li>Object-Oriented Programming</li>
+                </p>
+            
+                
+            </div>
+            <div class="card">
+                <h2>Soft Skills</h2>
+                <p><li>Problem Solver </li> <li>Customer service</li> <li>Communication</li></p>
+            </div>
+                
+            
+            
+        </section>
+
+        <section id = "Certifications"> 
+            <h2>Certifications</h2>
+            <div class="tags">
+               
+                        <span class="tag"> AWS Academy Graduate</span> <br>
+                        <span class="tag">Flutter Bootcamp</span>
+                        <span class="tag">Google IT Support (In Progress)</span>
+                        <span class="tag">Full Stack WEB Development Bootcamp (In Progress)</span>
+                    </div>
+
+        </section>
+
+        <section id="contact" class="contact-section">
+            <h2>Get In Touch</h2>
+            <p>Based in Scarborough, Ontario.</p>
+            <a href="mailto:thetechgirlgita@gmail.com" class="contact-btn">Email Me</a> 
+            <a href="https://www.linkedin.com/in/thetechgirlgita" class="contact-btn">LinkedIn</a> 
+        </section>
+    </div>
+
+    <script>
+        const glow = document.getElementById('mouseGlow');
+        document.addEventListener('mousemove', (e) => {
+            glow.style.background = `radial-gradient(circle at ${e.clientX}px ${e.clientY}px, rgba(0, 242, 255, 0.15) 0%, transparent 35%)`;
+        });
+    </script>
+</body>
+</html>
