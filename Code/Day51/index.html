@@ -3,17 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 51 JavaScript Basics</title>
+    <title>Day 51 | JS Counter</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Day 51: JavaScript Basics</h1>
-    <p>Welcome to Day 51 of our coding journey! Today, we will explore the basics of JavaScript.</p>
-    <div class="counter-container">
-        <h1 id="countLabel">0</h1>
-        <button id="incrementBtn">Increment</button>
-        <button id="ResetBtn">Reset</button>
+
+    <div class="counter-box">
+        <p class="label">Task Counter</p>
+        <h1 id="display">0</h1>
+        
+        <div class="button-group">
+            <button id="lowerBtn">Decrease</button>
+            <button id="resetBtn">Reset</button>
+            <button id="addBtn">Increase</button>
+        </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

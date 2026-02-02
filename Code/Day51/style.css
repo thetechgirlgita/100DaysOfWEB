@@ -1,0 +1,73 @@
+:root {
+    --bg: #0a0a0a;
+    --card: #141414;
+    --accent: #00f2ff;
+    --text: #ffffff;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.counter-box {
+    background: var(--card);
+    padding: 40px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    width: 320px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.label {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+
+#display {
+    font-size: 6rem;
+    margin: 20px 0;
+    font-weight: 700;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+button {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 0.8rem;
+}
+
+button:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(0, 242, 255, 0.05);
+}
+
+#resetBtn {
+    border-color: #ff4757;
+    color: #ff4757;
+}
+
+#resetBtn:hover {
+    background: rgba(255, 71, 87, 0.1);
+}
