@@ -39,4 +39,5 @@ function updateDisplay() {
     } else {
         display.style.color = "white";
     }
+    
 }
