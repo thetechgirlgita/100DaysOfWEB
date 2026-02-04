@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 53 | Temp Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="converter-card">
+        <h2>Temp Converter</h2>
+        <input type="number" id="textBox" value="0">
+        
+        <div class="radio-group">
+            <input type="radio" id="toFahrenheit" name="unit">
+            <label for="toFahrenheit">Celsius ➔ Fahrenheit</label><br>
+            <input type="radio" id="toCelsius" name="unit">
+            <label for="toCelsius">Fahrenheit ➔ Celsius</label>
+        </div>
+
+        <button id="submitBtn">Convert</button>
+        <p id="result">Select a unit and submit</p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
