@@ -1,0 +1,32 @@
+body {
+    background-color: #050505;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.clock-container {
+    text-align: center;
+    background: #111;
+    padding: 50px;
+    border-radius: 20px;
+    border: 1px solid #00f2ff;
+    box-shadow: 0 0 30px rgba(0, 242, 255, 0.1);
+}
+
+#clock {
+    font-size: 5rem;
+    color: #00f2ff;
+    text-shadow: 0 0 20px #00f2ff;
+    font-weight: bold;
+}
+
+#date-display {
+    color: #555;
+    margin-top: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
