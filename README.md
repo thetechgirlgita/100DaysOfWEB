@@ -72,3 +72,5 @@ This repository will be updated **daily** as I continue my learning journey.
 | Day 52 | Roll the Dice | [View Code](Code/Day52/index.html)| [View Result 5ere](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day52)|
 | Day 53 | Temperature Converter | [View Code](Code/Day53/index.html)| [View Result 5ere](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day53)|
 | Day 54 | Number Guessing Game | [View Code](Code/Day54/index.html)| [View Result 5ere](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day54)|
+| Day 55 | Digital Clock | [View Code](Code/Day55/index.html)| [View Result 5ere](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day55)|
+| Day 56 | Added Theme Switcher in Portfolio | [View Code](Code/Day56/index.html)| [View Result 5ere](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day56)|
