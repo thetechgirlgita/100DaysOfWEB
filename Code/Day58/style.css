@@ -1,57 +1,78 @@
+:root {
+    --primary: #2563eb;
+    --bg: #f8fafc;
+    --text: #1e293b;
+    --error: #ef4444;
+    --success: #22c55e;
+}
+
 body {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    font-family: 'Segoe UI', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    color: white;
 }
 
-.auth-container {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    padding: 40px;
-    border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    width: 350px;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+.auth-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
 }
 
-.form-box h2 { margin-top: 0; color: #38bdf8; }
+.tabs {
+    display: flex;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.tabs button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-weight: 600;
+    color: #64748b;
+}
+
+.tabs button.active {
+    color: var(--primary);
+    border-bottom: 2px solid var(--primary);
+    margin-bottom: -2px;
+}
+
+h2 { margin-bottom: 1.5rem; color: var(--text); }
 
 input {
     width: 100%;
     padding: 12px;
-    margin: 10px 0;
-    background: rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    color: white;
+    margin-bottom: 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
     box-sizing: border-box;
 }
 
-button {
+.main-btn {
     width: 100%;
     padding: 12px;
-    background: #38bdf8;
+    background: var(--primary);
+    color: white;
     border: none;
-    border-radius: 8px;
-    color: #0f172a;
-    font-weight: bold;
+    border-radius: 6px;
+    font-size: 1rem;
     cursor: pointer;
-    margin-top: 10px;
-    transition: 0.3s;
 }
 
-button:hover { background: #7dd3fc; }
+.hidden { display: none !important; }
 
-.hidden { display: none; }
+.message { font-size: 0.85rem; margin-top: 1rem; text-align: center; }
+.error { color: var(--error); }
+.success { color: var(--success); }
 
-.toggle-text { font-size: 0.85rem; text-align: center; margin-top: 20px; color: #94a3b8; }
-.toggle-text span { color: #38bdf8; cursor: pointer; text-decoration: underline; }
-
-.error-msg { color: #f87171; font-size: 0.8rem; min-height: 1.2rem; margin: 5px 0; }
-.logout-btn { background: #ef4444; color: white; }
-.logout-btn:hover { background: #dc2626; }
+.logout-btn { background: #64748b; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; }
