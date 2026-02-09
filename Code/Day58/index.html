@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Tool | Password Validator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="tool-card">
+        <h2>SecureCheck <small>IT Policy Tool</small></h2>
+        <input type="password" id="passwordInput" placeholder="Enter password to test...">
+        
+        <div class="strength-meter">
+            <div id="meterBar"></div>
+        </div>
+
+        <ul class="checklist">
+            <li id="len">At least 8 characters</li>
+            <li id="num">At least 1 number</li>
+            <li id="upper">At least 1 uppercase letter</li>
+            <li id="special">At least 1 special character (@#$!)</li>
+        </ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
