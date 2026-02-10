@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineBook | Local Storage Seating</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="movie-container">
+        <h2>Now Showing: Interstellar</h2>
+        
+        <div class="screen">SCREEN</div>
+
+        <div class="seat-grid" id="seatGrid">
+            </div>
+
+        <div class="legend">
+            <div class="item"><div class="seat"></div> <small>Available</small></div>
+            <div class="item"><div class="seat selected"></div> <small>Your Selection</small></div>
+            <div class="item"><div class="seat occupied"></div> <small>Sold Out</small></div>
+        </div>
+
+        <p class="stats">
+            You have selected <span id="count">0</span> seats for a total price of $<span id="total">0</span>
+        </p>
+        
+        <button class="book-btn" onclick="confirmBooking()">Confirm Reservation</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
