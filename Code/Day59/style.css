@@ -40,7 +40,7 @@ body {
 
 .seat:hover:not(.occupied) { transform: scale(1.2); background: #666; }
 .seat.selected { background-color: #00f2ff; }
-.seat.occupied { background-color: #fff; cursor: not-allowed; opacity: 0.3; }
+.seat.occupied { background-color: #fff; cursor: not-allowed; opacity: 0.5; }
 
 .legend {
     display: flex;
