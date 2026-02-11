@@ -71,9 +71,9 @@ This repository will be updated **daily** as I continue my learning journey.
 | Day 51 | Counter using Javascript Basics | [View Code](Code/Day51/index.html)| [View Result 5ere](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day51)|
 | Day 52 | Roll the Dice | [View Code](Code/Day52/index.html)| [View Result 5ere](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day52)|
 | Day 53 | Temperature Converter | [View Code](Code/Day53/index.html)| [View Result 5ere](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day53)|
-| Day 54 | Number Guessing Game | [View Code](Code/Day54/index.html)| [View Result 5ere](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day54)|
-| Day 55 | Digital Clock | [View Code](Code/Day55/index.html)| [View Result 5ere](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day55)|
-| Day 56 | Added Theme Switcher in Portfolio | [View Code](Code/Day56/index.html)| [View Result 5ere](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day56)|
+| Day 54 | Number Guessing Game | [View Code](Code/Day54/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day54)|
+| Day 55 | Digital Clock | [View Code](Code/Day55/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day55)|
+| Day 56 | Added Theme Switcher in Portfolio | [View Code](Code/Day56/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day56)|
 | Day 57 | Added Typewriter effect in Portfolio | [View Code](Code/Day57/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day57)|
 | Day 58 | Local Storage in Login page | [View Code](Code/Day58/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day58)|
 | Day 59 | Movie Ticket System | [View Code](Code/Day59/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day59)|
