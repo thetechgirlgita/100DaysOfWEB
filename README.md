@@ -62,10 +62,10 @@ This repository will be updated **daily** as I continue my learning journey.
 | Day 42 | CSS 3D Memebership Card | [View Code](Code/Day42/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day42)|
 | Day 43 | CSS Unfolding Menu Card | [View Code](Code/Day43/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day43)|
 | Day 44 | CSS Mobile Mockup | [View Code](Code/Day44/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day44)|
-| Day 45 | CSS Mobile Mockup | [View Code](Code/Day45/index.html)| [View Result 5ere](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day45)|
-| Day 46 | CSS Glassmorphism Tribute to Arijit Singh | [View Code](Code/Day46/index.html)| [View Result 5ere](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day46)|
-| Day 47 | CSS Cube | [View Code](Code/Day47/index.html)| [View Result 5ere](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day47)|
-| Day 48 | CSS Folder | [View Code](Code/Day48/index.html)| [View Result 5ere](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day48)|
+| Day 45 | CSS Mobile Mockup | [View Code](Code/Day45/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day45)|
+| Day 46 | CSS Glassmorphism Tribute to Arijit Singh | [View Code](Code/Day46/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day46)|
+| Day 47 | CSS Cube | [View Code](Code/Day47/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day47)|
+| Day 48 | CSS Folder | [View Code](Code/Day48/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day48)|
 | Day 49 | CSS Saturn Ring 3D | [View Code](Code/Day49/index.html)| [View Result 5ere](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day49)|
 | Day 50 | CSS Professional Portfolio | [View Code](Code/Day50/index.html)| [View Result 5ere](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day50)|
 | Day 51 | Counter using Javascript Basics | [View Code](Code/Day51/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day51)|
