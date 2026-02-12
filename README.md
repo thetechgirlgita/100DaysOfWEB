@@ -68,9 +68,9 @@ This repository will be updated **daily** as I continue my learning journey.
 | Day 48 | CSS Folder | [View Code](Code/Day48/index.html)| [View Result 5ere](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day48)|
 | Day 49 | CSS Saturn Ring 3D | [View Code](Code/Day49/index.html)| [View Result 5ere](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day49)|
 | Day 50 | CSS Professional Portfolio | [View Code](Code/Day50/index.html)| [View Result 5ere](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day50)|
-| Day 51 | Counter using Javascript Basics | [View Code](Code/Day51/index.html)| [View Result 5ere](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day51)|
-| Day 52 | Roll the Dice | [View Code](Code/Day52/index.html)| [View Result 5ere](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day52)|
-| Day 53 | Temperature Converter | [View Code](Code/Day53/index.html)| [View Result 5ere](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day53)|
+| Day 51 | Counter using Javascript Basics | [View Code](Code/Day51/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day51)|
+| Day 52 | Roll the Dice | [View Code](Code/Day52/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day52)|
+| Day 53 | Temperature Converter | [View Code](Code/Day53/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day53)|
 | Day 54 | Number Guessing Game | [View Code](Code/Day54/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day54)|
 | Day 55 | Digital Clock | [View Code](Code/Day55/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day55)|
 | Day 56 | Added Theme Switcher in Portfolio | [View Code](Code/Day56/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day56)|
