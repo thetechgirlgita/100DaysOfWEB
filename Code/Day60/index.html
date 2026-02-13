@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineLocal | Single Screen Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <nav>
+            <button onclick="switchView('booking')">Ticket Booth</button>
+            <button onclick="switchView('manager')">Manager Tools</button>
+        </nav>
+
+        <section id="bookingView">
+            <h2 id="displayTitle">Loading Movie...</h2>
+            <div class="screen-box">SCREEN</div>
+            <div id="seatingPlan" class="grid"></div>
+            <div class="info">
+                <p>Total: $<span id="totalPrice">0</span></p>
+                <button class="confirm-btn" onclick="processPayment()">Book Selected</button>
+            </div>
+        </section>
+
+        <section id="managerView" class="hidden">
+            <h2>Theater Management</h2>
+            <div class="control-group">
+                <label>Update Movie Title</label>
+                <input type="text" id="inputTitle" placeholder="Movie Name">
+                <label>Ticket Price ($)</label>
+                <input type="number" id="inputPrice">
+                <button onclick="updateCinema()">Update Movie & Reset Grid</button>
+            </div>
+            <div class="stats-box">
+                <p>Total Revenue: <strong id="revenue">$0</strong></p>
+                <p>Seats Sold: <strong id="seatsSold">0/40</strong></p>
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
