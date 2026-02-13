@@ -1,107 +1,69 @@
-// --- INITIAL STATE ---
-let cinemaDB = {
-    movie: "Interstellar",
-    price: 15,
-    bookedSeats: [], // Array of seat indexes
-    revenue: 0
+
+const currentMovie = {
+    title: "INTERSTELLAR",
+    time: "19:30",
+    price: 15.00
 };
 
-// --- CORE FUNCTIONS ---
+let bookedSeats = JSON.parse(localStorage.getItem('booked_db')) || [];
 
 function init() {
-    const savedData = localStorage.getItem('cine_local_data');
-    if (savedData) {
-        cinemaDB = JSON.parse(savedData);
-    }
-    renderSeating();
-    updateStats();
-}
-
-function renderSeating() {
-    document.getElementById('displayTitle').innerText = cinemaDB.movie;
-    document.getElementById('displayPrice').innerText = cinemaDB.price;
+    const grid = document.getElementById('seatGrid');
+    grid.innerHTML = '';
     
-    const grid = document.getElementById('seatingPlan');
-    grid.innerHTML = ''; // Clear current grid
-
-    // Generate 40 seats
     for (let i = 0; i < 40; i++) {
         const seat = document.createElement('div');
-        const isOccupied = cinemaDB.bookedSeats.includes(i);
+        seat.className = bookedSeats.includes(i) ? 'seat occupied' : 'seat';
         
-        seat.className = isOccupied ? 'seat occupied' : 'seat available';
-        
-        if (!isOccupied) {
+        if (!bookedSeats.includes(i)) {
             seat.onclick = () => {
                 seat.classList.toggle('selected');
-                calculatePrice();
+                updatePrice();
             };
         }
         grid.appendChild(seat);
     }
 }
 
-function calculatePrice() {
-    const selected = document.querySelectorAll('.seat.selected').length;
-    document.getElementById('selectedCount').innerText = selected;
-    document.getElementById('totalPrice').innerText = selected * cinemaDB.price;
+function updatePrice() {
+    const count = document.querySelectorAll('.seat.selected').length;
+    document.getElementById('totalPrice').innerText = count * currentMovie.price;
 }
 
-function processPayment() {
+function issueReceipt() {
     const selectedNodes = document.querySelectorAll('.seat.selected');
-    if (selectedNodes.length === 0) return alert("Select seats first!");
+    if (selectedNodes.length === 0) return alert("Select seats!");
 
+    const seatNumbers = [];
     const allSeats = document.querySelectorAll('.seat');
-    const newBookings = [];
-
-    selectedNodes.forEach(node => {
-        const index = Array.from(allSeats).indexOf(node);
-        cinemaDB.bookedSeats.push(index);
-        cinemaDB.revenue += cinemaDB.price;
+    
+    selectedNodes.forEach(s => {
+        const idx = Array.from(allSeats).indexOf(s);
+        seatNumbers.push(idx + 1); 
+        bookedSeats.push(idx); // Add to permanent list
     });
 
-    saveData();
-    alert("Booking Confirmed!");
+    // Save to Local Storage
+    localStorage.setItem('booked_db', JSON.stringify(bookedSeats));
+
+    // GENERATE RECEIPT HTML
+    const total = seatNumbers.length * currentMovie.price;
+    document.getElementById('receiptBody').innerHTML = `
+        <div class="receipt-line"><span>MOVIE:</span> <span>${currentMovie.title}</span></div>
+        <div class="receipt-line"><span>TIME:</span> <span>${currentMovie.time}</span></div>
+        <div class="receipt-line"><span>SEATS:</span> <span>#${seatNumbers.join(', ')}</span></div>
+        <hr>
+        <div class="receipt-line"><strong>TOTAL:</strong> <strong>$${total.toFixed(2)}</strong></div>
+        <p style="font-size: 0.7rem; margin-top: 10px;">ID: ${Date.now().toString().slice(-6)}</p>
+    `;
+
+    document.getElementById('receiptModal').classList.remove('hidden');
 }
 
-function updateCinema() {
-    const title = document.getElementById('inputTitle').value;
-    const price = document.getElementById('inputPrice').value;
-
-    if (title) cinemaDB.movie = title;
-    if (price) cinemaDB.price = parseInt(price);
-    
-    // Clear seats for new movie
-    cinemaDB.bookedSeats = [];
-    cinemaDB.revenue = 0;
-
-    saveData();
-    alert("System Updated for new Movie!");
+function closeReceipt() {
+    document.getElementById('receiptModal').classList.add('hidden');
+    init(); // Refresh grid
+    updatePrice();
 }
 
-function updateStats() {
-    document.getElementById('revenue').innerText = `$${cinemaDB.revenue.toFixed(2)}`;
-    document.getElementById('occupancy').innerText = `${cinemaDB.bookedSeats.length} / 40`;
-}
-
-function saveData() {
-    localStorage.setItem('cine_local_data', JSON.stringify(cinemaDB));
-    renderSeating();
-    updateStats();
-    calculatePrice();
-}
-
-function switchView(view) {
-    document.getElementById('bookingView').classList.toggle('hidden', view !== 'booking');
-    document.getElementById('managerView').classList.toggle('hidden', view !== 'manager');
-}
-
-function wipeAllData() {
-    if (confirm("Delete all sales and seats?")) {
-        localStorage.removeItem('cine_local_data');
-        location.reload();
-    }
-}
-
-// Start app
 init();
