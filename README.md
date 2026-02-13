@@ -77,3 +77,4 @@ This repository will be updated **daily** as I continue my learning journey.
 | Day 57 | Added Typewriter effect in Portfolio | [View Code](Code/Day57/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day57)|
 | Day 58 | Local Storage in Login page | [View Code](Code/Day58/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day58)|
 | Day 59 | Movie Ticket System | [View Code](Code/Day59/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day59)|
+| Day 60 | Movie Ticket System With Receipt Generator | [View Code](Code/Day60/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day60)|
