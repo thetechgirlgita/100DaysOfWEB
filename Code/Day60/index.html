@@ -3,38 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CineLocal | Single Screen Manager</title>
+    <title>CineLocal | Professional Cinema Suite</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="app-container">
-        <nav>
-            <button onclick="switchView('booking')">Ticket Booth</button>
-            <button onclick="switchView('manager')">Manager Tools</button>
+        <nav class="main-nav">
+            <h1>CineLocal <span>v1.0</span></h1>
+            <div class="nav-buttons">
+                <button class="nav-btn" onclick="switchView('booking')">Ticket Booth</button>
+                <button class="nav-btn" onclick="switchView('manager')">Admin Panel</button>
+            </div>
         </nav>
 
-        <section id="bookingView">
-            <h2 id="displayTitle">Loading Movie...</h2>
-            <div class="screen-box">SCREEN</div>
-            <div id="seatingPlan" class="grid"></div>
-            <div class="info">
-                <p>Total: $<span id="totalPrice">0</span></p>
-                <button class="confirm-btn" onclick="processPayment()">Book Selected</button>
+        <main id="bookingView">
+            <div class="header-info">
+                <h2 id="displayTitle">Loading...</h2>
+                <p>Ticket Price: $<span id="displayPrice">0</span></p>
             </div>
-        </section>
+
+            <div class="theater-stage">
+                <div class="screen">SCREEN</div>
+                <div id="seatingPlan" class="seat-grid"></div>
+            </div>
+
+            <div class="booking-summary">
+                <p>Selected: <span id="selectedCount">0</span> seats</p>
+                <p>Total: $<span id="totalPrice">0</span></p>
+                <button class="action-btn" onclick="processPayment()">Confirm & Pay</button>
+            </div>
+        </main>
 
         <section id="managerView" class="hidden">
             <h2>Theater Management</h2>
-            <div class="control-group">
-                <label>Update Movie Title</label>
-                <input type="text" id="inputTitle" placeholder="Movie Name">
-                <label>Ticket Price ($)</label>
-                <input type="number" id="inputPrice">
-                <button onclick="updateCinema()">Update Movie & Reset Grid</button>
-            </div>
-            <div class="stats-box">
-                <p>Total Revenue: <strong id="revenue">$0</strong></p>
-                <p>Seats Sold: <strong id="seatsSold">0/40</strong></p>
+            <div class="admin-grid">
+                <div class="settings-card">
+                    <h3>Update Screening</h3>
+                    <div class="input-group">
+                        <label>Movie Title</label>
+                        <input type="text" id="inputTitle" placeholder="Enter movie name">
+                    </div>
+                    <div class="input-group">
+                        <label>Base Price ($)</label>
+                        <input type="number" id="inputPrice" value="12">
+                    </div>
+                    <button class="save-btn" onclick="updateCinema()">Apply & Reset Seats</button>
+                </div>
+
+                <div class="stats-card">
+                    <h3>Revenue Report</h3>
+                    <div class="stat-item">
+                        <label>Total Sales</label>
+                        <p id="revenue">$0.00</p>
+                    </div>
+                    <div class="stat-item">
+                        <label>Occupancy</label>
+                        <p id="occupancy">0 / 40</p>
+                    </div>
+                    <button class="reset-btn" onclick="wipeAllData()">Wipe System Data</button>
+                </div>
             </div>
         </section>
     </div>
