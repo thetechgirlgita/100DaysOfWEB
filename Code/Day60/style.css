@@ -1,0 +1,81 @@
+:root {
+    --bg-dark: #0f172a;
+    --card-bg: #1e293b;
+    --accent: #0ea5e9;
+    --text: #f8fafc;
+    --seat-avail: #444451;
+    --seat-booked: #ef4444;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text);
+    font-family: 'Inter', system-ui, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.app-container { width: 100%; max-width: 800px; padding: 20px; }
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 20px;
+}
+
+h1 span { font-size: 0.8rem; color: var(--accent); }
+
+.nav-btn {
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/* SEATING STYLES */
+.theater-stage { perspective: 1000px; margin: 40px 0; }
+.screen {
+    background: #e2e8f0;
+    height: 8px;
+    width: 80%;
+    margin: 0 auto 50px;
+    box-shadow: 0 10px 20px rgba(255,255,255,0.2);
+    border-radius: 5px;
+    text-align: center;
+    font-size: 0.7rem;
+    color: #1e293b;
+}
+
+.seat-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 12px;
+    justify-items: center;
+}
+
+.seat {
+    width: 30px;
+    height: 25px;
+    background: var(--seat-avail);
+    border-radius: 6px 6px 2px 2px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.seat.available:hover { background: #64748b; transform: scale(1.1); }
+.seat.selected { background: var(--accent); box-shadow: 0 0 10px var(--accent); }
+.seat.occupied { background: #1e293b; border: 1px solid #334155; cursor: not-allowed; }
+
+/* UTILITY */
+.hidden { display: none !important; }
+.admin-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
+.settings-card, .stats-card { background: var(--card-bg); padding: 20px; border-radius: 12px; }
+input { width: 100%; padding: 10px; margin: 10px 0; border-radius: 6px; border: 1px solid #334155; background: #0f172a; color: white; }
+.action-btn, .save-btn { width: 100%; padding: 12px; background: var(--accent); border: none; border-radius: 6px; color: white; font-weight: bold; cursor: pointer; }
+.reset-btn { margin-top: 20px; background: #991b1b; color: white; border: none; padding: 8px; border-radius: 4px; cursor: pointer; }
