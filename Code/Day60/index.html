@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CineLocal | Self-Service Kiosk</title>
+    <title>Cinema | Self-Service Kiosk</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,11 +16,11 @@
         <div class="screen-indicator">SCREEN</div>
         
         <div id="seatGrid" class="grid"></div>
-        <div class="legend">
-            <div class="item"><div class="seat"></div> <small>Available</small></div>
-            <div class="item"><div class="seat selected"></div> <small>Your Selection</small></div>
-            <div class="item"><div class="seat occupied"></div> <small>Sold Out</small></div>
-    </div>
+        <ul class="legend">
+            <li><div class="seat"></div> Available</li>
+            <li><div class="seat selected"></div> Selected</li>
+            <li><div class="seat occupied"></div> Sold Out</li>
+        </ul>
 
         <div class="footer-controls">
             <div class="price-display">

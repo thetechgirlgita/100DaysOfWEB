@@ -2,47 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CineLocal | Self-Service Kiosk</title>
+    <title>CineLocal | Multi-Screen Kiosk</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="kiosk-container">
-        <header>
-            <h1 id="movieTitle">INTERSTELLAR</h1>
-            <p id="movieTime">Showtime: 19:30 | Screen 1</p>
-        </header>
-
-        <div class="screen-indicator">SCREEN</div>
-        
-        <div id="seatGrid" class="grid"></div>
-        <div class="legend">
-            <div class="item"><div class="seat"></div> <small>Available</small></div>
-            <div class="item"><div class="seat selected"></div> <small>Your Selection</small></div>
-            <div class="item"><div class="seat occupied"></div> <small>Sold Out</small></div>
-    </div>
-    <div class="admin-zone">
-        <button onclick="exportToExcel()" class="export-btn">Download Shift Report (CSV)</button>
-    </div>
-
-        <div class="footer-controls">
-            <div class="price-display">
-                Total: $<span id="totalPrice">0</span>
+    <div id="lobby" class="container">
+        <h1>Hamro Cinema</h1>
+        <div class="movie-list">
+            <div class="card" onclick="openTheater('Screen 1', 'INTERSTELLAR', 15)">
+                <h3>INTERSTELLAR</h3>
+                <p>19:30 | Screen 1</p>
             </div>
-            <button class="confirm-btn" onclick="issueReceipt()">Confirm Selection</button>
+            <div class="card" onclick="openTheater('Screen 2', 'THE BATMAN', 12)">
+                <h3>THE BATMAN</h3>
+                <p>21:00 | Screen 2</p>
+            </div>
         </div>
     </div>
 
+    <div id="theater" class="container hidden">
+        <button onclick="goBack()" class="back-btn">← Back</button>
+        <h2 id="activeMovie"></h2>
+        <div class="screen-bar">SCREEN</div>
+        <div id="seatGrid" class="grid"></div>
+        <div class="legend">
+            <div class="item"><div class="seat"></div> <small>Available</small></div>
+            <div class="item"><div class="seat selected"></div> <small>Selected</small></div>
+            <div class="item"><div class="seat occupied"></div> <small>Sold Out</small></div>
+        </div>
+        <button class="confirm-btn" onclick="issueReceipt()">Confirm Selection ($<span id="total">0</span>)</button>
+    </div>
 
     <div id="receiptModal" class="modal hidden">
         <div class="modal-content">
-            <div class="receipt-header">
-                <h2>BOOKING RECEIPT</h2>
-                <p>Please present this at the counter</p>
-            </div>
-            <div id="receiptBody">
-                </div>
-            <button onclick="closeReceipt()" class="print-btn">Finish & Clear</button>
+            <div id="receiptBody"></div>
+            <button onclick="closeReceipt()" class="close-btn">Done (Back to Lobby)</button>
         </div>
     </div>
 

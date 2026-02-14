@@ -1,69 +1,89 @@
+let currentScreen = "";
+let currentMovie = "";
+let moviePrice = 0;
+const rowLetters = ['A', 'B', 'C', 'D', 'E'];
 
-const currentMovie = {
-    title: "INTERSTELLAR",
-    time: "19:30",
-    price: 15.00
-};
-
-let bookedSeats = JSON.parse(localStorage.getItem('booked_db')) || [];
-
-function init() {
-    const grid = document.getElementById('seatGrid');
-    grid.innerHTML = '';
+function openTheater(screen, title, price) {
+    currentScreen = screen;
+    currentMovie = title;
+    moviePrice = price;
     
+    document.getElementById('lobby').classList.add('hidden');
+    document.getElementById('theater').classList.remove('hidden');
+    document.getElementById('activeMovie').innerText = `${title} (${screen})`;
+    
+    renderSeats();
+}
+
+function renderSeats() {
+    const grid = document.getElementById('seatGrid');
+    grid.innerHTML = "";
+    
+    // Load occupied seats for THIS specific screen (e.g., "Screen 1")
+    const occupied = JSON.parse(localStorage.getItem(currentScreen)) || [];
+
     for (let i = 0; i < 40; i++) {
+        const row = rowLetters[Math.floor(i / 8)];
+        const col = (i % 8) + 1;
+        const seatID = `${row}${col}`;
+
         const seat = document.createElement('div');
-        seat.className = bookedSeats.includes(i) ? 'seat occupied' : 'seat';
+        const isTaken = occupied.includes(seatID);
         
-        if (!bookedSeats.includes(i)) {
+        seat.className = isTaken ? 'seat occupied' : 'seat';
+        seat.innerText = isTaken ? "" : seatID; // Show A1, B2 etc.
+        seat.style.fontSize = "8px";
+        seat.dataset.id = seatID;
+        
+        if (!isTaken) {
             seat.onclick = () => {
                 seat.classList.toggle('selected');
-                updatePrice();
+                updateTotal();
             };
         }
         grid.appendChild(seat);
     }
 }
 
-function updatePrice() {
+function updateTotal() {
     const count = document.querySelectorAll('.seat.selected').length;
-    document.getElementById('totalPrice').innerText = count * currentMovie.price;
+    document.getElementById('total').innerText = count * moviePrice;
 }
 
 function issueReceipt() {
     const selectedNodes = document.querySelectorAll('.seat.selected');
-    if (selectedNodes.length === 0) return alert("Select seats!");
+    if (selectedNodes.length === 0) return alert("Please select seats!");
 
-    const seatNumbers = [];
-    const allSeats = document.querySelectorAll('.seat');
-    
-    selectedNodes.forEach(s => {
-        const idx = Array.from(allSeats).indexOf(s);
-        seatNumbers.push(idx + 1); 
-        bookedSeats.push(idx); // Add to permanent list
+    let selectedIDs = [];
+    let occupied = JSON.parse(localStorage.getItem(currentScreen)) || [];
+
+    selectedNodes.forEach(node => {
+        selectedIDs.push(node.dataset.id);
+        occupied.push(node.dataset.id); // Permanently book
     });
 
-    // Save to Local Storage
-    localStorage.setItem('booked_db', JSON.stringify(bookedSeats));
+    localStorage.setItem(currentScreen, JSON.stringify(occupied));
 
-    // GENERATE RECEIPT HTML
-    const total = seatNumbers.length * currentMovie.price;
+    // Show the Receipt
     document.getElementById('receiptBody').innerHTML = `
-        <div class="receipt-line"><span>MOVIE:</span> <span>${currentMovie.title}</span></div>
-        <div class="receipt-line"><span>TIME:</span> <span>${currentMovie.time}</span></div>
-        <div class="receipt-line"><span>SEATS:</span> <span>#${seatNumbers.join(', ')}</span></div>
+        <h3>CINE-LOCAL RECEIPT</h3>
+        <p><strong>Movie:</strong> ${currentMovie}</p>
+        <p><strong>Hall:</strong> ${currentScreen}</p>
+        <p><strong>Seats:</strong> ${selectedIDs.join(', ')}</p>
         <hr>
-        <div class="receipt-line"><strong>TOTAL:</strong> <strong>$${total.toFixed(2)}</strong></div>
-        <p style="font-size: 0.7rem; margin-top: 10px;">ID: ${Date.now().toString().slice(-6)}</p>
+        <p><strong>Total: $${selectedIDs.length * moviePrice}</strong></p>
+        <p style="font-size:10px">ID: ${Math.random().toString(36).substr(2, 5).toUpperCase()}</p>
     `;
-
     document.getElementById('receiptModal').classList.remove('hidden');
 }
 
 function closeReceipt() {
     document.getElementById('receiptModal').classList.add('hidden');
-    init(); // Refresh grid
-    updatePrice();
+    goBack(); // Return to lobby after booking
 }
 
-init();
+function goBack() {
+    document.getElementById('lobby').classList.remove('hidden');
+    document.getElementById('theater').classList.add('hidden');
+    document.getElementById('total').innerText = "0"; // Reset price
+}
