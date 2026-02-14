@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineLocal | Self-Service Kiosk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="kiosk-container">
+        <header>
+            <h1 id="movieTitle">INTERSTELLAR</h1>
+            <p id="movieTime">Showtime: 19:30 | Screen 1</p>
+        </header>
+
+        <div class="screen-indicator">SCREEN</div>
+        
+        <div id="seatGrid" class="grid"></div>
+        <div class="legend">
+            <div class="item"><div class="seat"></div> <small>Available</small></div>
+            <div class="item"><div class="seat selected"></div> <small>Your Selection</small></div>
+            <div class="item"><div class="seat occupied"></div> <small>Sold Out</small></div>
+    </div>
+
+        <div class="footer-controls">
+            <div class="price-display">
+                Total: $<span id="totalPrice">0</span>
+            </div>
+            <button class="confirm-btn" onclick="issueReceipt()">Confirm Selection</button>
+        </div>
+    </div>
+
+
+    <div id="receiptModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="receipt-header">
+                <h2>BOOKING RECEIPT</h2>
+                <p>Please present this at the counter</p>
+            </div>
+            <div id="receiptBody">
+                </div>
+            <button onclick="closeReceipt()" class="print-btn">Finish & Clear</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
