@@ -11,7 +11,11 @@ function openTheater(screen, title, price) {
     document.getElementById('lobby').classList.add('hidden');
     document.getElementById('theater').classList.remove('hidden');
     document.getElementById('activeMovie').innerText = `${title} (${screen})`;
-    document.getElementById('coupleToggle').checked = false; // Reset toggle
+    
+    // Hard Reset UI
+    document.getElementById('coupleToggle').checked = false;
+    document.getElementById('total').innerText = "0";
+    document.getElementById('errorCard').classList.add('hidden');
     
     renderSeats();
 }
@@ -31,8 +35,9 @@ function renderSeats() {
         seat.dataset.id = seatID;
         
         if (!isTaken) {
-            seat.onclick = () => {
-                seat.classList.toggle('selected');
+            seat.onclick = function() {
+                this.classList.toggle('selected');
+                checkPromoEligibility(); 
                 updateTotal();
             };
         }
@@ -40,13 +45,34 @@ function renderSeats() {
     }
 }
 
+function showError() {
+    const card = document.getElementById('errorCard');
+    card.classList.remove('hidden');
+    setTimeout(() => { card.classList.add('hidden'); }, 4000);
+}
+
+function checkPromoEligibility() {
+    const selectedCount = document.querySelectorAll('#seatGrid .seat.selected').length;
+    const coupleToggle = document.getElementById('coupleToggle');
+
+    // If promo is toggled but you only have 1 or 0 seats
+    if (coupleToggle.checked && selectedCount < 2) {
+        showError();
+        coupleToggle.checked = false;
+    }
+}
+
+function handleToggleClick() {
+    checkPromoEligibility();
+    updateTotal();
+}
+
 function updateTotal() {
-    const selectedCount = document.querySelectorAll('.seat.selected').length;
+    const selectedCount = document.querySelectorAll('#seatGrid .seat.selected').length;
     const isCouple = document.getElementById('coupleToggle').checked;
     
     let total = selectedCount * moviePrice;
     
-    // Day 62: Apply 20% discount if 2+ seats and Promo is ON
     if (isCouple && selectedCount >= 2) {
         total = total * 0.8;
     }
@@ -55,44 +81,35 @@ function updateTotal() {
 }
 
 function issueReceipt() {
-    const selectedNodes = document.querySelectorAll('.seat.selected');
+    const selectedNodes = document.querySelectorAll('#seatGrid .seat.selected');
     const isCouple = document.getElementById('coupleToggle').checked;
 
-    if (selectedNodes.length === 0) return alert("Please select seats!");
+    if (selectedNodes.length === 0) return alert("Select a seat!");
+
     if (isCouple && selectedNodes.length < 2) {
-        alert("Couple promo requires at least 2 seats!");
+        showError();
+        document.getElementById('coupleToggle').checked = false;
+        updateTotal();
         return;
     }
 
-    let selectedIDs = [];
+    let selectedIDs = Array.from(selectedNodes).map(node => node.dataset.id);
     let occupied = JSON.parse(localStorage.getItem(currentScreen)) || [];
-
-    selectedNodes.forEach(node => {
-        selectedIDs.push(node.dataset.id);
-        occupied.push(node.dataset.id);
-    });
-
+    occupied.push(...selectedIDs);
     localStorage.setItem(currentScreen, JSON.stringify(occupied));
 
-    // UI Feedback for Receipt
-    const finalPrice = document.getElementById('total').innerText;
-    const modalContainer = document.getElementById('modalContainer');
-    
-    if (isCouple) modalContainer.classList.add('val-receipt');
-    else modalContainer.classList.remove('val-receipt');
+    const modal = document.getElementById('modalContainer');
+    if (isCouple) modal.classList.add('val-receipt');
+    else modal.classList.remove('val-receipt');
 
     document.getElementById('receiptBody').innerHTML = `
-        <h2 style="color: ${isCouple ? '#ff4757' : '#333'}">
-            ${isCouple ? '💖 VALENTINE PASS' : 'CINEMA RECEIPT'}
-        </h2>
+        <h2 style="color:${isCouple ? '#ff4757' : '#333'}">${isCouple ? '💖 VALENTINE PASS' : 'TICKET'}</h2>
         <p><strong>Movie:</strong> ${currentMovie}</p>
         <p><strong>Seats:</strong> ${selectedIDs.join(', ')}</p>
         <hr>
-        <p style="font-size: 1.2rem;"><strong>Total: $${finalPrice}</strong></p>
-        ${isCouple ? '<div class="popcorn-badge">🍿 FREE LARGE POPCORN VOUCHER</div>' : ''}
-        <p style="font-size: 9px; margin-top: 20px;">Ref: ${Math.random().toString(36).substr(2, 5).toUpperCase()}</p>
+        <p><strong>Total: $${document.getElementById('total').innerText}</strong></p>
+        ${isCouple ? '<div class="popcorn-badge">🍿 FREE POPCORN INCLUDED</div>' : ''}
     `;
-
     document.getElementById('receiptModal').classList.remove('hidden');
 }
 
@@ -104,5 +121,4 @@ function closeReceipt() {
 function goBack() {
     document.getElementById('lobby').classList.remove('hidden');
     document.getElementById('theater').classList.add('hidden');
-    document.getElementById('total').innerText = "0";
 }

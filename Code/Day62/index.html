@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hamro Cinema| Valentine Multiplex</title>
+    <title>Hamro Cinema | Valentine Multiplex</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div id="lobby" class="container">
-        <h1 class="logo">CineLocal <span>Multiplex</span></h1>
+        <h1 class="logo">Hamro Cinema <span>Multiplex</span></h1>
         <div class="movie-list">
             <div class="card" onclick="openTheater('Screen 1', 'INTERSTELLAR', 15)">
                 <div class="promo-tag">Valentine's Special</div>
@@ -25,6 +25,14 @@
     </div>
 
     <div id="theater" class="container hidden">
+        <div id="errorCard" class="error-card hidden">
+            <div class="error-icon">💔</div>
+            <div class="error-text">
+                <strong>Sorry, Pal!</strong><br>
+                This discount is for couples only. Go get a partner first!
+            </div>
+        </div>
+
         <button onclick="goBack()" class="back-btn">← Back to Lobby</button>
         <h2 id="activeMovie"></h2>
         
@@ -40,7 +48,7 @@
 
         <div class="promo-container">
             <label class="promo-toggle">
-                <input type="checkbox" id="coupleToggle" onchange="updateTotal()">
+                <input type="checkbox" id="coupleToggle" onchange="handleToggleClick()">
                 <span class="checkmark"></span>
                 Apply Couple's Discount? 💖
             </label>
