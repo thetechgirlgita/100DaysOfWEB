@@ -1,52 +1,107 @@
 body {
-    background: #ff758c;
+    background: #ffafbd;
+    background: linear-gradient(to right, #ffc3a0, #ffafbd);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    font-family: 'Comic Sans MS', cursive; /* Extra sarcasm */
+    font-family: 'Segoe UI', sans-serif;
     margin: 0;
+    overflow: hidden;
 }
 
 .v-card {
     background: white;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
     text-align: center;
     width: 350px;
-    transition: 0.5s;
+    position: relative;
+    z-index: 10;
 }
 
-.hidden { display: none; }
+.hidden { display: none !important; }
+
+h1 { color: #d63031; font-size: 1.5rem; margin-bottom: 10px; }
+
+.contract-id { color: #636e72; font-size: 0.8rem; margin-bottom: 20px; }
+
+.requirements {
+    text-align: left;
+    font-size: 0.9rem;
+    background: #fff5f6;
+    padding: 15px;
+    border-radius: 15px;
+    margin: 20px 0;
+    color: #444;
+    border: 1px dashed #ff7675;
+}
+
+.requirements p { margin: 8px 0; }
+
+.btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
 
 #yesBtn {
-    background: #ff4757;
+    background: #ff7675;
     color: white;
     border: none;
-    padding: 15px 30px;
-    border-radius: 10px;
-    font-size: 1.2rem;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: bold;
     cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(255, 118, 117, 0.4);
 }
 
+#yesBtn:hover { transform: scale(1.1); background: #d63031; }
+
 #noBtn {
-    background: #2f3542;
+    background: #636e72;
     color: white;
     border: none;
-    padding: 15px 30px;
-    border-radius: 10px;
-    position: absolute; /* Needed for the "run away" logic */
-    transition: 0.1s;
+    padding: 12px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    position: absolute;
+    transition: 0.1s ease;
 }
 
 .receipt {
     text-align: left;
-    background: #f1f2f6;
+    background: #f9f9f9;
     padding: 15px;
-    border-radius: 5px;
-    margin-top: 20px;
-    font-family: monospace;
+    border-radius: 10px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    border-left: 4px solid #ff7675;
 }
 
-.sarcasm { font-style: italic; color: #57606f; margin-top: 15px; font-size: 0.8rem; }
+.sarcasm {
+    margin-top: 15px;
+    font-style: italic;
+    color: #636e72;
+    font-size: 0.8rem;
+}
+
+.final-btn {
+    background: #d63031;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 50px;
+    margin-top: 20px;
+    cursor: pointer;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}

@@ -2,30 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Valentine Vibe Check</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Renewal Contract</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <div id="page1" class="v-card">
-        <h1 id="mainHeading">Will you be my Valentine? 💖</h1>
-        <p id="subText">Think carefully... my code is watching you.</p>
+        <h1>Valentine's Renewal 📜</h1>
+        <p class="contract-id">Contract ID: 2026-BFF-4EVER</p>
         
+        <div class="requirements">
+            <p> 100% Hoodie Sharing Policy</p>
+            <p> Unlimited forehead kisses with flowers</p>
+            <p> Mandatory Enough Attention</p>
+            <p> Mandatory Monthly gifts</p>
+            <p> No "I'm fine" (You must tell me)</p>
+        </div>
+
         <div class="btn-group">
-            <button id="yesBtn" onclick="nextPage()">YES</button>
-            <button id="noBtn">NO</button>
+            <button id="yesBtn" onclick="nextPage()">I AGREE ❤️</button>
+            <button id="noBtn">I DECLINE</button>
         </div>
     </div>
 
     <div id="page2" class="v-card hidden">
-        <h1>Transaction Successful! 🧾</h1>
+        <h1>Signed & Locked! 📝</h1>
         <div class="receipt">
-            <p><strong>Item:</strong> Human Affection (Trial Version)</p>
-            <p><strong>Cost:</strong> Your Dignity</p>
-            <p><strong>Status:</strong> Stuck with me forever.</p>
+            <p><strong>Merchant:</strong> Your Favorite Person</p>
+            <p><strong>Customer:</strong> The Luckiest Guy</p>
+            <p><strong>Due Date:</strong> Today (and every day)</p>
+            <p><strong>Price:</strong> Your undivided attention</p>
             <hr>
-            <p class="sarcasm">"Oh, look at you... clicking YES like you had a choice. I literally disabled the NO button."</p>
+            <p><strong>STATUS:</strong> NO REFUNDS.</p>
         </div>
-        <button onclick="reset()" class="back-btn">Try to Escape</button>
+        <p class="sarcasm">"System Note: The 'Decline' button has been permanently disabled because you're mine now. Happy Valentine's Day!"</p>
+        <button class="final-btn" onclick="sendLove()">Send Me a Kiss 💋</button>
     </div>
 
     <script src="script.js"></script>
