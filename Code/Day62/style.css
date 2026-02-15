@@ -1,0 +1,52 @@
+body {
+    background: #ff758c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Comic Sans MS', cursive; /* Extra sarcasm */
+    margin: 0;
+}
+
+.v-card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    text-align: center;
+    width: 350px;
+    transition: 0.5s;
+}
+
+.hidden { display: none; }
+
+#yesBtn {
+    background: #ff4757;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+#noBtn {
+    background: #2f3542;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    position: absolute; /* Needed for the "run away" logic */
+    transition: 0.1s;
+}
+
+.receipt {
+    text-align: left;
+    background: #f1f2f6;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-family: monospace;
+}
+
+.sarcasm { font-style: italic; color: #57606f; margin-top: 15px; font-size: 0.8rem; }
