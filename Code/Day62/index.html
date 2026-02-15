@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Valentine Vibe Check</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="page1" class="v-card">
+        <h1 id="mainHeading">Will you be my Valentine? 💖</h1>
+        <p id="subText">Think carefully... my code is watching you.</p>
+        
+        <div class="btn-group">
+            <button id="yesBtn" onclick="nextPage()">YES</button>
+            <button id="noBtn">NO</button>
+        </div>
+    </div>
+
+    <div id="page2" class="v-card hidden">
+        <h1>Transaction Successful! 🧾</h1>
+        <div class="receipt">
+            <p><strong>Item:</strong> Human Affection (Trial Version)</p>
+            <p><strong>Cost:</strong> Your Dignity</p>
+            <p><strong>Status:</strong> Stuck with me forever.</p>
+            <hr>
+            <p class="sarcasm">"Oh, look at you... clicking YES like you had a choice. I literally disabled the NO button."</p>
+        </div>
+        <button onclick="reset()" class="back-btn">Try to Escape</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
