@@ -3,41 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine's Renewal Contract</title>
+    <title>CineLocal | Valentine Multiplex</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div id="page1" class="v-card">
-        <h1>Valentine's Renewal 📜</h1>
-        <p class="contract-id">Contract ID: 2026-BFF-4EVER</p>
-        
-        <div class="requirements">
-            <p> 100% Hoodie Sharing Policy</p>
-            <p> Unlimited forehead kisses with flowers</p>
-            <p> Mandatory Enough Attention</p>
-            <p> Mandatory Monthly gifts</p>
-            <p> No "I'm fine" (You must tell me)</p>
-        </div>
-
-        <div class="btn-group">
-            <button id="yesBtn" onclick="nextPage()">I AGREE ❤️</button>
-            <button id="noBtn">I DECLINE</button>
+    <div id="lobby" class="container">
+        <h1 class="logo">CineLocal <span>Multiplex</span></h1>
+        <div class="movie-list">
+            <div class="card" onclick="openTheater('Screen 1', 'INTERSTELLAR', 15)">
+                <div class="promo-tag">Valentine's Special</div>
+                <h3>INTERSTELLAR</h3>
+                <p>19:30 | Screen 1</p>
+            </div>
+            <div class="card" onclick="openTheater('Screen 2', 'THE BATMAN', 12)">
+                <div class="promo-tag">Valentine's Special</div>
+                <h3>THE BATMAN</h3>
+                <p>21:00 | Screen 2</p>
+            </div>
         </div>
     </div>
 
-    <div id="page2" class="v-card hidden">
-        <h1>Signed & Locked! 📝</h1>
-        <div class="receipt">
-            <p><strong>Merchant:</strong> Your Favorite Person</p>
-            <p><strong>Customer:</strong> The Luckiest Guy</p>
-            <p><strong>Due Date:</strong> Today (and every day)</p>
-            <p><strong>Price:</strong> Your undivided attention</p>
-            <hr>
-            <p><strong>STATUS:</strong> NO REFUNDS.</p>
+    <div id="theater" class="container hidden">
+        <button onclick="goBack()" class="back-btn">← Back to Lobby</button>
+        <h2 id="activeMovie"></h2>
+        
+        <div class="screen-bar">SCREEN</div>
+        
+        <div id="seatGrid" class="grid"></div>
+
+        <ul class="legend">
+            <li><div class="seat"></div> Available</li>
+            <li><div class="seat selected"></div> Selected</li>
+            <li><div class="seat occupied"></div> Sold Out</li>
+        </ul>
+
+        <div class="promo-container">
+            <label class="promo-toggle">
+                <input type="checkbox" id="coupleToggle" onchange="updateTotal()">
+                <span class="checkmark"></span>
+                Apply Couple's Discount? 💖
+            </label>
+            <p class="promo-detail">(Buy 2+ seats for 20% OFF + Free Popcorn)</p>
         </div>
-        <p class="sarcasm">"System Note: The 'Decline' button has been permanently disabled because you're mine now. Happy Valentine's Day!"</p>
-        <button class="final-btn" onclick="sendLove()">Send Me a Kiss 💋</button>
+
+        <button class="confirm-btn" onclick="issueReceipt()">
+            Confirm Selection ($<span id="total">0</span>)
+        </button>
+    </div>
+
+    <div id="receiptModal" class="modal hidden">
+        <div class="modal-content" id="modalContainer">
+            <div id="receiptBody"></div>
+            <button onclick="closeReceipt()" class="close-btn">Done</button>
+        </div>
     </div>
 
     <script src="script.js"></script>
