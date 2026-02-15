@@ -80,3 +80,4 @@ This repository will be updated **daily** as I continue my learning journey.
 | Day 60 | Movie Ticket System With Receipt Generator | [View Code](Code/Day60/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day60)|
 | Day 61 | Movie Ticket System With Receipt Generator with Multi Screen| [View Code](Code/Day61/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day61)|
 | Day 62 | Movie Ticket System With Receipt Generator Valentine Promotion | [View Code](Code/Day62/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day62)|
+| Day 63 | Hamro Cinema with Reset button  | [View Code](Code/Day63/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day63)|
