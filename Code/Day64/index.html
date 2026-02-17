@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hamro Cinema | Multi-Screen Kiosk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="lobby" class="container">
+        <h1>Hamro Cinema</h1>
+        <div class="movie-list">
+            <div class="card" onclick="openTheater('Screen 1', 'INTERSTELLAR', 15)">
+                <h3>INTERSTELLAR</h3>
+                <p>19:30 | Screen 1</p>
+            </div>
+            <div class="card" onclick="openTheater('Screen 2', 'THE BATMAN', 12)">
+                <h3>THE BATMAN</h3>
+                <p>21:00 | Screen 2</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="theater" class="container hidden">
+        <button onclick="goBack()" class="back-btn">← Back</button>
+        <h2 id="activeMovie"></h2>
+        <div class="screen-bar">SCREEN</div>
+        <div id="seatGrid" class="grid"></div>
+        <div class="legend">
+            <div class="item"><div class="seat"></div> <small>Available</small></div>
+            <div class="item"><div class="seat selected"></div> <small>Selected</small></div>
+            <div class="item"><div class="seat occupied"></div> <small>Sold Out</small></div>
+        </div>
+        <button class="confirm-btn" onclick="issueReceipt()">Confirm Selection ($<span id="total">0</span>)</button>
+        
+        <!-- Admin Controls Day 63 -->
+        <div class="admin-controls">
+            <button onclick="adminReset()" class="reset-btn">⚙️ Reset Screen</button>
+        </div>
+    </div>
+
+    <div id="receiptModal" class="modal hidden">
+        <div class="modal-content">
+            <div id="receiptBody"></div>
+            <button onclick="closeReceipt()" class="close-btn">Done (Back to Lobby)</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
