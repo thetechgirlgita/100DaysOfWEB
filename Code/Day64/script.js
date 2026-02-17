@@ -54,26 +54,42 @@ function issueReceipt() {
     if (selectedNodes.length === 0) return alert("Select seats first!");
 
     let selectedIDs = Array.from(selectedNodes).map(n => n.dataset.id);
+    let totalPaid = parseFloat(document.getElementById('total').innerText);
+    
+    // 1. Save Occupied Seats
     let occupied = JSON.parse(localStorage.getItem(currentScreen)) || [];
     occupied.push(...selectedIDs);
     localStorage.setItem(currentScreen, JSON.stringify(occupied));
 
-    document.getElementById('receiptBody').innerHTML = `
-        <h2 style="margin-top:0">Hamro Cinema</h2>
-        <p><strong>Movie:</strong> ${currentMovie}</p>
-        <p><strong>Hall:</strong> ${currentScreen}</p>
-        <p><strong>Seats:</strong> ${selectedIDs.join(', ')}</p>
-        <hr>
-        <p style="font-size: 1.2rem"><strong>Total: $${document.getElementById('total').innerText}</strong></p>
-    `;
-    document.getElementById('receiptModal').classList.remove('hidden');
+    // 2. NEW: Update Revenue Ledger
+    let currentRevenue = parseFloat(localStorage.getItem(currentScreen + "_revenue")) || 0;
+    localStorage.setItem(currentScreen + "_revenue", currentRevenue + totalPaid);
+
+    // 3. Show Receipt 
+    renderReceipt(selectedIDs, totalPaid);
 }
 
+function toggleRevenue() {
+    const pin = prompt("Enter Admin PIN to view stats:");
+    if (pin === ADMIN_PIN) {
+        const revDisplay = document.getElementById('revenueDisplay');
+        const totalEarned = localStorage.getItem(currentScreen + "_revenue") || "0.00";
+        
+        revDisplay.innerText = `Total Revenue: $${parseFloat(totalEarned).toFixed(2)}`;
+        revDisplay.classList.toggle('hidden');
+    } else if (pin !== null) {
+        alert("Unauthorized Access.");
+    }
+};
+
+// Ensure Admin Reset also clears revenue
 function adminReset() {
     const pin = prompt("Admin PIN:");
     if (pin === ADMIN_PIN) {
-        if (confirm("Clear bookings for " + currentScreen + "?")) {
+        if (confirm("Clear bookings AND revenue for " + currentScreen + "?")) {
             localStorage.removeItem(currentScreen);
+            localStorage.removeItem(currentScreen + "_revenue"); // Clear the money too
+            document.getElementById('revenueDisplay').classList.add('hidden');
             renderSeats();
             updateTotal();
         }
