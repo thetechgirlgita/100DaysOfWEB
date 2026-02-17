@@ -32,9 +32,11 @@
         </div>
         <button class="confirm-btn" onclick="issueReceipt()">Confirm Selection ($<span id="total">0</span>)</button>
         
-        <!-- Admin Controls Day 63 -->
+        <!-- Admin Controls Day 64 update -->
         <div class="admin-controls">
-            <button onclick="adminReset()" class="reset-btn">⚙️ Reset Screen</button>
+            <div id="revenueDisplay" class="revenue-tag hidden">Session Revenue: $0.00</div>
+            <button onclick="adminReset()" class="reset-btn"> Admin Reset</button>
+            <button onclick="toggleRevenue()" class="stats-btn"> Stats</button>
         </div>
     </div>
 
