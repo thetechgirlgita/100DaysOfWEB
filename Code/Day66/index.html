@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 66 | Task Scheduler & Alarms</title>
+    <title>Day 66 | Pro Task Scheduler</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,18 +14,26 @@
             <p id="dateDisplay"></p>
         </header>
         
-        <div class="input-section">
-            <input type="text" id="taskInput" placeholder="What needs to be done?">
-            <div class="row">
-                <input type="datetime-local" id="timeInput">
-                <button onclick="addTask()" class="add-btn">Schedule</button>
+        <div class="scheduler-controls">
+            <input type="text" id="taskInput" placeholder="What's the mission?">
+            
+            <div class="logic-row">
+                <div class="input-group">
+                    <label>Date</label>
+                    <input type="date" id="dateInput">
+                </div>
+                <div class="input-group">
+                    <label>Time</label>
+                    <input type="time" id="timeInput">
+                </div>
+                <button onclick="addTask()" class="add-btn">Add</button>
             </div>
         </div>
 
         <ul id="taskList"></ul>
 
         <div class="footer">
-            <span id="taskCount">0 active</span>
+            <span id="taskCount">0 tasks active</span>
             <button class="clear-btn" onclick="clearCompleted()">Clear Finished</button>
         </div>
     </div>
