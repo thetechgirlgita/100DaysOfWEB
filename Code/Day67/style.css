@@ -108,3 +108,25 @@ ul { list-style: none; padding: 0; }
 
 .clear-btn { background: none; border: 1px solid #333; color: #666; padding: 5px 10px; border-radius: 5px; cursor: pointer; }
 .clear-btn:hover { color: white; border-color: white; }
+
+
+/* Responsive Design */
+.deadline-badge {
+    font-family: 'Courier New', Courier, monospace; /* Digital look */
+    font-weight: bold;
+    font-size: 12px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 8px;
+}
+
+/* Color the countdown based on urgency */
+.task-item:not(.completed) .deadline-badge {
+    color: var(--primary);
+}
+
+.task-item.overdue .deadline-badge {
+    color: var(--danger);
+}
