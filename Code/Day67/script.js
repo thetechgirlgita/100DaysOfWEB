@@ -1,84 +1,36 @@
-let tasks = JSON.parse(localStorage.getItem("day66_tasks")) || [];
-const alarmSound = document.getElementById('alarmSound');
+// --- DAY 67: LIVE COUNTDOWN LOGIC ---
 
-// 1. Initial UI Setup
-document.getElementById('dateDisplay').innerText = new Date().toDateString();
-
-// 2. THE HEARTBEAT - CHECKING FOR DEADLINES EVERY SECOND
+// 1. Update the Heartbeat to also refresh the UI
 setInterval(() => {
     const now = new Date().getTime();
     
     tasks.forEach(task => {
+        // Alarm logic (from Day 66)
         if (!task.completed && !task.alarmFired && task.deadline) {
             const deadlineTime = new Date(task.deadline).getTime();
-            
             if (now >= deadlineTime) {
                 triggerAlarm(task);
             }
         }
     });
+
+    // NEW: Refresh the UI every second to update countdown numbers
+    render(); 
 }, 1000);
 
-function triggerAlarm(task) {
-    task.alarmFired = true; // Stop repeated alarms
-    alarmSound.play().catch(e => console.log("Audio requires interaction first"));
+function getRemainingTime(deadline) {
+    if (!deadline) return null;
     
-    alert(`⏰ TIME UP: ${task.text}`);
-    saveAndRender();
-}
-
-// 3. TASK LOGIC
-function addTask() {
-    const taskInput = document.getElementById('taskInput');
-    const dateInput = document.getElementById('dateInput');
-    const timeInput = document.getElementById('timeInput');
-
-    if (taskInput.value.trim() === "") return;
-
-    let combinedDeadline = null;
-    if (dateInput.value && timeInput.value) {
-        combinedDeadline = `${dateInput.value}T${timeInput.value}`;
-    }
-
-    const newTask = {
-        id: Date.now(),
-        text: taskInput.value,
-        deadline: combinedDeadline,
-        completed: false,
-        alarmFired: false
-    };
-
-    tasks.push(newTask);
+    const now = new Date().getTime();
+    const t = new Date(deadline).getTime() - now;
     
-    // Clear inputs
-    taskInput.value = "";
-    dateInput.value = "";
-    timeInput.value = "";
-    
-    saveAndRender();
-}
+    if (t <= 0) return "TIME UP";
 
-function clearCompleted() {
-    //  Filter and re-assign
-    tasks = tasks.filter(task => task.completed === false);
-    saveAndRender();
-}
+    const hours = Math.floor((t / (1000 * 60 * 60)));
+    const minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((t % (1000 * 60)) / 1000);
 
-function toggleTask(id) {
-    tasks = tasks.map(task => 
-        task.id === id ? { ...task, completed: !task.completed } : task
-    );
-    saveAndRender();
-}
-
-function deleteTask(id) {
-    tasks = tasks.filter(task => task.id !== id);
-    saveAndRender();
-}
-
-function saveAndRender() {
-    localStorage.setItem("day66_tasks", JSON.stringify(tasks));
-    render();
+    return `${hours}h ${minutes}m ${seconds}s`;
 }
 
 function render() {
@@ -87,19 +39,17 @@ function render() {
 
     tasks.forEach(task => {
         const isOverdue = !task.completed && task.deadline && new Date(task.deadline) < new Date();
+        const countdown = !task.completed ? getRemainingTime(task.deadline) : "Completed";
+        
         const li = document.createElement('li');
         li.className = `task-item ${task.completed ? 'completed' : ''} ${isOverdue ? 'overdue' : ''}`;
         
-        let displayDate = "No deadline";
-        if(task.deadline) {
-            const d = new Date(task.deadline);
-            displayDate = d.toLocaleDateString() + " " + d.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
-        }
-
         li.innerHTML = `
             <div onclick="toggleTask(${task.id})">
                 <span class="task-text">${task.text}</span>
-                <div class="deadline-badge">⏰ ${displayDate}</div>
+                <div class="deadline-badge">
+                    ${isOverdue ? "⚠️ Overdue" : "⏳ " + (countdown || "No deadline")}
+                </div>
             </div>
             <span class="delete-btn" onclick="deleteTask(${task.id})">✕</span>
         `;
@@ -108,5 +58,3 @@ function render() {
 
     document.getElementById('taskCount').innerText = `${tasks.filter(t => !t.completed).length} active`;
 }
-
-render();
