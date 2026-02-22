@@ -1,66 +1,53 @@
-let tasks = JSON.parse(localStorage.getItem("day67_tasks")) || [];
+let tasks = JSON.parse(localStorage.getItem("day68_tasks")) || [];
 const alarmSound = document.getElementById('alarmSound');
 
 document.getElementById('dateDisplay').innerText = new Date().toDateString();
 
-// --- 1. (Refreshes every 1 second) ---
+// 1. HEARTBEAT ENGINE (Alarm Check + UI Refresh)
 setInterval(() => {
     const now = new Date().getTime();
-    
     tasks.forEach(task => {
         if (!task.completed && !task.alarmFired && task.deadline) {
-            const deadlineTime = new Date(task.deadline).getTime();
-            if (now >= deadlineTime) {
+            if (now >= new Date(task.deadline).getTime()) {
                 triggerAlarm(task);
             }
         }
     });
-
-    // Re-render to update the ticking countdown numbers
-    render(); 
+    render(); // Update countdowns every second
 }, 1000);
 
 function triggerAlarm(task) {
     task.alarmFired = true;
-    alarmSound.play().catch(() => console.log("User interaction needed for audio"));
-    alert(`⏰ TIME UP: ${task.text}`);
+    alarmSound.play().catch(() => {});
+    alert(`🚨 PRIORITY ${task.priority.toUpperCase()}: ${task.text}`);
     saveAndRender();
 }
 
-// --- 2. TIME CALCULATIONS ---
+// 2. TIME MATH
 function getRemainingTime(deadline) {
     if (!deadline) return null;
-    
-    const now = new Date().getTime();
-    const diff = new Date(deadline).getTime() - now;
-    
-    if (diff <= 0) return "TIME EXPIRED";
-
-    const hours = Math.floor(diff / (1000 * 60 * 60));
-    const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const secs = Math.floor((diff % (1000 * 60)) / 1000);
-
-    // Formats to 00h 00m 00s
-    return `${hours.toString().padStart(2, '0')}h ${mins.toString().padStart(2, '0')}m ${secs.toString().padStart(2, '0')}s`;
+    const diff = new Date(deadline).getTime() - new Date().getTime();
+    if (diff <= 0) return "EXPIRED";
+    const h = Math.floor(diff / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    return `${h.toString().padStart(2,'0')}h ${m.toString().padStart(2,'0')}m ${s.toString().padStart(2,'0')}s`;
 }
 
-// --- 3. CRUD LOGIC ---
+// 3. TASK OPERATIONS
 function addTask() {
     const tInput = document.getElementById('taskInput');
     const dInput = document.getElementById('dateInput');
     const tmInput = document.getElementById('timeInput');
+    const pInput = document.getElementById('priorityInput');
 
     if (tInput.value.trim() === "") return;
-
-    let deadline = null;
-    if (dInput.value && tmInput.value) {
-        deadline = `${dInput.value}T${tmInput.value}`;
-    }
 
     const newTask = {
         id: Date.now(),
         text: tInput.value,
-        deadline: deadline,
+        deadline: (dInput.value && tmInput.value) ? `${dInput.value}T${tmInput.value}` : null,
+        priority: pInput.value,
         completed: false,
         alarmFired: false
     };
@@ -81,35 +68,40 @@ function deleteTask(id) {
 }
 
 function clearCompleted() {
-    tasks = tasks.filter(t => t.completed === false);
+    tasks = tasks.filter(t => !t.completed);
     saveAndRender();
 }
 
 function saveAndRender() {
-    localStorage.setItem("day67_tasks", JSON.stringify(tasks));
+    localStorage.setItem("day68_tasks", JSON.stringify(tasks));
     render();
 }
 
-// --- 4. RENDER ENGINE ---
+// 4. RENDER ENGINE (With Priority Sorting)
 function render() {
     const list = document.getElementById('taskList');
-    const taskCount = document.getElementById('taskCount');
-    
-    
     list.innerHTML = "";
 
-    tasks.forEach(task => {
+    // SORTING LOGIC: High (1) -> Medium (2) -> Low (3)
+    const priorityOrder = { high: 1, medium: 2, low: 3 };
+    const sortedTasks = [...tasks].sort((a, b) => {
+        if (a.completed !== b.completed) return a.completed ? 1 : -1; // Finished at bottom
+        return priorityOrder[a.priority] - priorityOrder[b.priority];
+    });
+
+    sortedTasks.forEach(task => {
         const isOverdue = !task.completed && task.deadline && new Date(task.deadline) < new Date();
-        const countdownText = !task.completed ? getRemainingTime(task.deadline) : "Finished ✓";
+        const countdown = !task.completed ? getRemainingTime(task.deadline) : "DONE";
         
         const li = document.createElement('li');
-        li.className = `task-item ${task.completed ? 'completed' : ''} ${isOverdue ? 'overdue' : ''}`;
+        li.className = `task-item ${task.completed ? 'completed' : ''} ${isOverdue ? 'overdue' : ''} priority-${task.priority}`;
         
         li.innerHTML = `
             <div onclick="toggleTask(${task.id})" style="flex:1">
+                <span class="priority-tag tag-${task.priority}">${task.priority}</span>
                 <span class="task-text">${task.text}</span>
                 <div class="deadline-badge">
-                    ${isOverdue ? "⚠️ " : " "}${countdownText || "No Deadline"}
+                    ${isOverdue ? "⚠️ " : "⏳ "}${countdown || "No Deadline"}
                 </div>
             </div>
             <span class="delete-btn" onclick="deleteTask(${task.id})">✕</span>
@@ -117,8 +109,7 @@ function render() {
         list.appendChild(li);
     });
 
-    taskCount.innerText = `${tasks.filter(t => !t.completed).length} active`;
+    document.getElementById('taskCount').innerText = `${tasks.filter(t => !t.completed).length} tasks active`;
 }
 
-// Initial render
 render();
