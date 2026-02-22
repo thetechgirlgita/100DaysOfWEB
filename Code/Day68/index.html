@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 67 | Live Countdown Scheduler</title>
+    <title>Day 68 | Priority Task Manager</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,7 +15,7 @@
         </header>
         
         <div class="scheduler-controls">
-            <input type="text" id="taskInput" placeholder="What's the mission?">
+            <input type="text" id="taskInput" placeholder="Enter your mission...">
             
             <div class="logic-row">
                 <div class="input-group">
@@ -25,6 +25,14 @@
                 <div class="input-group">
                     <label>Time</label>
                     <input type="time" id="timeInput">
+                </div>
+                <div class="input-group">
+                    <label>Priority</label>
+                    <select id="priorityInput">
+                        <option value="low">Low</option>
+                        <option value="medium" selected>Med</option>
+                        <option value="high">High</option>
+                    </select>
                 </div>
                 <button onclick="addTask()" class="add-btn">Add</button>
             </div>
