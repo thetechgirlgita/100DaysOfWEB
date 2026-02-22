@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 67 | Live Countdown Scheduler</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="todo-app">
+        <header>
+            <h2>Task Scheduler</h2>
+            <p id="dateDisplay"></p>
+        </header>
+        
+        <div class="scheduler-controls">
+            <input type="text" id="taskInput" placeholder="What's the mission?">
+            
+            <div class="logic-row">
+                <div class="input-group">
+                    <label>Date</label>
+                    <input type="date" id="dateInput">
+                </div>
+                <div class="input-group">
+                    <label>Time</label>
+                    <input type="time" id="timeInput">
+                </div>
+                <button onclick="addTask()" class="add-btn">Add</button>
+            </div>
+        </div>
+
+        <ul id="taskList"></ul>
+
+        <div class="footer">
+            <span id="taskCount">0 active</span>
+            <button class="clear-btn" onclick="clearCompleted()">Clear Finished</button>
+        </div>
+    </div>
+
+    <audio id="alarmSound" src="https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3" preload="auto"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
