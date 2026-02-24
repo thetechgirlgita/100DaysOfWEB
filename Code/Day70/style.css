@@ -1,0 +1,103 @@
+:root {
+    --primary: #00f2ff;
+    --danger: #ff4757;
+    --warning: #ffa502;
+    --bg: #121212;
+    --card: #1e1e1e;
+}
+
+body {
+    background-color: var(--bg);
+    color: white;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+    margin: 0;
+}
+
+.todo-app {
+    background: var(--card);
+    width: 460px;
+    padding: 25px;
+    border-radius: 24px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.7);
+}
+
+/* Day 70: Stats Header */
+.stats-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 20px;
+    border-radius: 18px;
+    margin-bottom: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.progress-circle-box { position: relative; width: 80px; height: 80px; }
+
+.progress-circle {
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    background: conic-gradient(var(--primary) 0deg, #333 0deg);
+    position: relative;
+    transition: 0.5s ease;
+}
+
+.progress-circle::after {
+    content: ""; position: absolute;
+    width: 64px; height: 64px;
+    background: #1e1e1e; border-radius: 50%;
+}
+
+#progressPercent { position: relative; z-index: 10; font-weight: 800; color: var(--primary); }
+
+.stats-text { display: flex; flex-direction: column; gap: 10px; }
+.stat-item label { font-size: 9px; text-transform: uppercase; color: #666; letter-spacing: 1px; }
+.stat-item span { font-size: 1.2rem; font-weight: 700; }
+
+/* Rituals & Controls */
+.ritual-dashboard { background: rgba(0, 242, 255, 0.05); padding: 15px; border-radius: 12px; margin-bottom: 20px; border: 1px dashed rgba(0, 242, 255, 0.2); }
+.ritual-dashboard label { font-size: 10px; color: var(--primary); display: block; margin-bottom: 10px; font-weight: bold; }
+.ritual-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.ritual-buttons button { background: #252525; border: 1px solid #333; color: #eee; padding: 8px; border-radius: 8px; font-size: 0.75rem; cursor: pointer; transition: 0.2s; }
+.ritual-buttons button:hover { border-color: var(--primary); transform: translateY(-2px); }
+
+.scheduler-controls { display: flex; flex-direction: column; gap: 12px; margin-bottom: 25px; }
+#taskInput, input, select { background: #252525; border: 1px solid #333; color: white; padding: 10px; border-radius: 10px; outline: none; }
+.logic-row { display: flex; gap: 8px; align-items: flex-end; }
+.input-group { display: flex; flex-direction: column; gap: 5px; flex: 1; }
+.input-group label { font-size: 8px; color: var(--primary); font-weight: bold; }
+
+.add-btn { background: var(--primary); border: none; height: 38px; padding: 0 15px; border-radius: 10px; font-weight: bold; cursor: pointer; transition: 0.2s; }
+.add-btn:hover { filter: brightness(1.2); transform: scale(1.05); }
+
+/* Task Items */
+ul { list-style: none; padding: 0; }
+.task-item {
+    background: #252525; padding: 15px; margin-bottom: 10px; border-radius: 14px;
+    display: flex; justify-content: space-between; align-items: center;
+    cursor: pointer; transition: 0.3s; border-left: 5px solid transparent;
+}
+.task-item:hover { transform: translateX(8px); background: #2d2d2d; }
+
+.priority-high { border-left-color: var(--danger); }
+.priority-medium { border-left-color: var(--warning); }
+.priority-low { border-left-color: #444; }
+
+.priority-tag { font-size: 9px; text-transform: uppercase; padding: 2px 6px; border-radius: 4px; margin-right: 10px; font-weight: bold; }
+.tag-high { background: rgba(255, 71, 87, 0.2); color: var(--danger); }
+.tag-medium { background: rgba(255, 165, 2, 0.2); color: var(--warning); }
+.tag-low { background: rgba(255, 255, 255, 0.1); color: #888; }
+
+.task-item.completed { opacity: 0.3; text-decoration: line-through; filter: grayscale(1); }
+.deadline-badge { font-family: 'Courier New', monospace; font-size: 11px; color: var(--primary); margin-top: 6px; display: block; }
+.delete-btn { color: #444; font-size: 18px; transition: 0.2s; }
+.delete-btn:hover { color: var(--danger); }
+
+.footer { display: flex; justify-content: space-between; margin-top: 20px; font-size: 0.8rem; color: #555; }
+.clear-btn { background: none; border: 1px solid #333; color: #555; padding: 4px 12px; border-radius: 8px; cursor: pointer; }
+.clear-btn:hover { color: white; border-color: white; }
