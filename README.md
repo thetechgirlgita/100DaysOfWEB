@@ -88,3 +88,4 @@ This repository will be updated **daily** as I continue my learning journey.
 | Day 68 | Todo Application with Timer & Task Priority Feature | [View Code](Code/Day68/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day68)|
 | Day 69 | Todo Application with Default Routine | [View Code](Code/Day69/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day69)|
 | Day 70 | Todo Application with Progress Animation | [View Code](Code/Day70/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day70)|
+| Day 71 | Todo Application with Progress History | [View Code](Code/Day71/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day71)|
