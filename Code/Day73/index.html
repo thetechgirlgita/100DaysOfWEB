@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 73 | Task & Notes Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="main-container">
+    <div class="todo-app">
+        <h2>Routine Architect</h2>
+        <div id="taskList"></div>
+        <button id="toggleHistory" class="history-btn" onclick="toggleHistoryView()">View Archive</button>
+        <ul id="historyList" class="history-list hidden"></ul>
+    </div>
+
+    <div class="notes-app">
+        <h3>Quick Notes</h3>
+        <div class="note-input">
+            <input type="text" id="noteTitle" placeholder="Title...">
+            <textarea id="noteBody" placeholder="Take a note..."></textarea>
+            <button onclick="addNote()" class="add-note-btn">Add Note</button>
+        </div>
+        
+        <div id="notesGrid" class="notes-grid"></div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
