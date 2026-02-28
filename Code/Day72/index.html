@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 72 | Insight Architect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="todo-app">
+        <header>
+            <h2>Routine Architect</h2>
+            <p id="dateDisplay"></p>
+        </header>
+
+        <div class="stats-container">
+            <div class="progress-circle-box">
+                <div id="progressCircle" class="progress-circle"><span id="progressPercent">0%</span></div>
+            </div>
+            <div class="stats-text">
+                <div class="stat-item"><label>Completed</label><span id="statDone">0</span></div>
+                <div class="stat-item"><label>Active</label><span id="statPending">0</span></div>
+            </div>
+        </div>
+
+        <div class="insights-container">
+            <label>Weekly Insight</label>
+            <div id="insightText" class="insight-text">Analyze your performance...</div>
+        </div>
+        
+        <div class="ritual-dashboard">
+            <label>Quick Rituals</label>
+            <div class="ritual-buttons">
+                <button onclick="addRitual('🧘 Meditation', 'high', 'Health')">Meditation</button>
+                <button onclick="addRitual('💻 Course Study', 'high', 'Skill Up')">Course</button>
+                <button onclick="addRitual('🗣️ Language', 'medium', 'Learning')">Language</button>
+                <button onclick="addRitual('🍳 Meal Prep', 'medium', 'Cooking')">Cook</button>
+            </div>
+        </div>
+        
+        <div class="scheduler-controls">
+            <input type="text" id="taskInput" placeholder="New mission...">
+            <div class="logic-row">
+                <div class="input-group"><label>Date</label><input type="date" id="dateInput"></div>
+                <div class="input-group"><label>Time</label><input type="time" id="timeInput"></div>
+                <div class="input-group"><label>Priority</label>
+                    <select id="priorityInput">
+                        <option value="low">Low</option><option value="medium" selected>Med</option><option value="high">High</option>
+                    </select>
+                </div>
+                <button onclick="addTask()" class="add-btn">Add</button>
+            </div>
+        </div>
+
+        <ul id="taskList"></ul>
+        <button id="toggleHistory" class="history-btn" onclick="toggleHistoryView()">View History Archive</button>
+        <ul id="historyList" class="history-list hidden"></ul>
+
+        <div class="footer">
+            <span id="taskCount">0 active</span>
+            <button class="clear-btn" onclick="clearCompleted()">Wipe Finished</button>
+        </div>
+    </div>
+
+    <audio id="alarmSound" src="https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3" preload="auto"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
