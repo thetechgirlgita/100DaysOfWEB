@@ -1,25 +1,29 @@
 :root { --primary: #00f2ff; --bg: #121212; }
-body { background-color: var(--bg); color: white; font-family: 'Inter', sans-serif; padding: 20px; }
-.main-container { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+body { background-color: var(--bg); color: white; font-family: 'Inter', sans-serif; display: flex; justify-content: center; padding: 40px; }
 
-/* Notes Module */
-.notes-app { width: 460px; background: #1e1e1e; padding: 25px; border-radius: 24px; }
-.note-input { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
-.note-input input, .note-input textarea { background: #252525; border: 1px solid #333; color: white; padding: 10px; border-radius: 8px; }
+.notes-app { width: 500px; }
+.note-input { display: flex; flex-direction: column; gap: 10px; margin-bottom: 30px; }
+.note-input input, .note-input textarea { background: #1e1e1e; border: 1px solid #333; color: white; padding: 12px; border-radius: 8px; }
 
-.notes-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 15px;
-}
+.notes-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
 
 .note-card {
-    background: #2d2d2d;
+    background: #1e1e1e;
     padding: 15px;
     border-radius: 12px;
-    border: 1px solid #444;
-    transition: 0.2s;
+    border: 1px solid #333;
+    position: relative;
+    word-wrap: break-word;
 }
-.note-card:hover { border-color: var(--primary); }
-.note-card h4 { margin: 0 0 10px 0; color: var(--primary); }
-.add-note-btn { background: #333; color: white; border: none; padding: 10px; border-radius: 8px; cursor: pointer; }
+
+/* Delete button hidden until hover */
+.note-delete {
+    position: absolute;
+    top: 5px; right: 8px;
+    color: #ff4757;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.note-card:hover .note-delete { opacity: 1; }
