@@ -5,7 +5,14 @@ function addNote() {
     const body = document.getElementById('noteBody');
     if (!title.value && !body.value) return;
 
-    notes.push({ id: Date.now(), title: title.value, body: body.value });
+    const newNote = {
+        id: Date.now(),
+        title: title.value,
+        body: body.value,
+        time: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
+    };
+
+    notes.unshift(newNote); // Keeps newest at the top
     saveNotes();
     title.value = ""; body.value = "";
 }
@@ -24,6 +31,7 @@ function renderNotes() {
         card.innerHTML = `
             <h4>${note.title}</h4>
             <p>${note.body}</p>
+            <div class="meta">${note.time}</div>
             <span class="note-delete" onclick="deleteNote(${note.id})">✕</span>
         `;
         grid.appendChild(card);
@@ -35,4 +43,5 @@ function deleteNote(id) {
     saveNotes();
 }
 
+// Initial render
 renderNotes();
