@@ -91,4 +91,4 @@ This repository will be updated **daily** as I continue my learning journey.
 | Day 71 | Todo Application with Progress History | [View Code](Code/Day71/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day71)|
 | Day 72 | Todo Application with Insight | [View Code](Code/Day72/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day72)|
 | Day 73 | Sticky Notes | [View Code](Code/Day73/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day73)|
-| Day 74 | Sticky Notes | [View Code](Code/Day73/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day73)|
+| Day 74 | Sticky Notes | [View Code](Code/Day74/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day74)|
