@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 74 | Color Architect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="notes-app">
+        <h2>Note Architect</h2>
+        
+        <div class="note-input" id="inputContainer">
+            <input type="text" id="noteTitle" placeholder="Title">
+            <textarea id="noteBody" placeholder="Take a note..."></textarea>
+            
+            <div class="input-footer">
+                <div class="color-palette">
+                    <div class="color-opt active" style="background: #2d2e30;" onclick="selectColor('#2d2e30', this)"></div>
+                    <div class="color-opt" style="background: #49443b;" onclick="selectColor('#49443b', this)"></div>
+                    <div class="color-opt" style="background: #2d4244;" onclick="selectColor('#2d4244', this)"></div>
+                    <div class="color-opt" style="background: #422742;" onclick="selectColor('#422742', this)"></div>
+                    <div class="color-opt" style="background: #1c3341;" onclick="selectColor('#1c3341', this)"></div>
+                    <div class="color-opt" style="background: #4b2525;" onclick="selectColor('#4b2525', this)"></div>
+                </div>
+                <button onclick="addNote()" class="add-btn">Add Note</button>
+            </div>
+        </div>
+        
+        <div id="notesGrid" class="notes-grid"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
