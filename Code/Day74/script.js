@@ -1,52 +1,45 @@
 let notes = JSON.parse(localStorage.getItem("day74_notes")) || [];
-let selectedColor = '#2d2e30'; 
+let selectedColor = '#2d2e30'; // Global tracker for currently picked color
 
-// 1. Color Selection Logic
 function selectColor(color, element) {
     selectedColor = color;
-    
-    // Update active circle UI
+    // Update Palette UI
     document.querySelectorAll('.color-opt').forEach(opt => opt.classList.remove('active'));
     element.classList.add('active');
-    
-    // Live preview for the input box
+    // Change input box color for "Live Preview"
     document.getElementById('inputContainer').style.backgroundColor = color;
 }
 
-// 2. Add Note Logic
 function addNote() {
-    const titleInput = document.getElementById('noteTitle');
-    const bodyInput = document.getElementById('noteBody');
+    const title = document.getElementById('noteTitle');
+    const body = document.getElementById('noteBody');
     
-    if (!titleInput.value && !bodyInput.value) return;
+    if (!title.value && !body.value) return;
 
     const newNote = {
         id: Date.now(),
-        title: titleInput.value,
-        body: bodyInput.value,
-        color: selectedColor,
+        title: title.value,
+        body: body.value,
+        color: selectedColor, // KEY FIX: Store the specific color picked
         time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
     };
 
-    notes.unshift(newNote); // Put newest at the top
+    notes.unshift(newNote);
     saveAndRender();
     
-    // Reset Input
-    titleInput.value = "";
-    bodyInput.value = "";
-    resetPalette();
+    // Reset Everything
+    title.value = "";
+    body.value = "";
+    resetUI();
 }
 
-function resetPalette() {
+function resetUI() {
     selectedColor = '#2d2e30';
-    const container = document.getElementById('inputContainer');
-    container.style.backgroundColor = selectedColor;
-    
+    document.getElementById('inputContainer').style.backgroundColor = selectedColor;
     document.querySelectorAll('.color-opt').forEach(opt => opt.classList.remove('active'));
-    document.querySelector('.color-opt').classList.add('active'); // Set first dot to active
+    document.querySelector('.color-opt').classList.add('active');
 }
 
-// 3. Persistence & Rendering
 function saveAndRender() {
     localStorage.setItem("day74_notes", JSON.stringify(notes));
     renderNotes();
@@ -60,8 +53,8 @@ function renderNotes() {
         const card = document.createElement('div');
         card.className = "note-card";
         
-        // Apply the saved color directly to the card
-        card.style.backgroundColor = note.color;
+        // APPLY THE SAVED COLOR HERE
+        card.style.backgroundColor = note.color || '#2d2e30'; 
         
         card.innerHTML = `
             ${note.title ? `<h4>${note.title}</h4>` : ''}
@@ -78,5 +71,5 @@ function deleteNote(id) {
     saveAndRender();
 }
 
-// Initial render call
+// Initial Run
 renderNotes();
