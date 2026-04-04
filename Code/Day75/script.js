@@ -51,7 +51,7 @@ function resetUI() {
 
 // 3. Render Engine ( accepts custom data arrays)
 function saveAndRender() {
-    localStorage.setItem("day74_notes", JSON.stringify(notes));
+    localStorage.setItem("day75_notes", JSON.stringify(notes));
     renderNotes();
 }
 
