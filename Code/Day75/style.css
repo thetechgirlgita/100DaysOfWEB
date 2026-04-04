@@ -1,0 +1,57 @@
+:root { --bg: #202124; --card: #2d2e30; --text: #e8eaed; --primary: #f1c40f; }
+
+body { background-color: var(--bg); color: var(--text); font-family: 'Segoe UI', sans-serif; display: flex; justify-content: center; padding: 20px; margin: 0; }
+.notes-app { width: 100%; max-width: 800px; padding: 20px; }
+
+/* Search Bar Styling */
+.search-container {
+    background: #3c4043;
+    display: flex;
+    align-items: center;
+    padding: 8px 15px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+.search-icon { margin-right: 10px; color: #9aa0a6; }
+.search-container input {
+    background: transparent;
+    border: none;
+    color: white;
+    width: 100%;
+    outline: none;
+    font-size: 1rem;
+}
+
+/* Note Input Area */
+.note-input { background: var(--card); padding: 15px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.4); margin-bottom: 30px; display: flex; flex-direction: column; gap: 10px; transition: background 0.3s; }
+.note-input input, .note-input textarea { background: transparent; border: none; color: white; outline: none; }
+.note-input input { font-weight: bold; font-size: 1.1rem; }
+.note-input textarea { resize: none; min-height: 50px; color: #ccc; }
+
+.input-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; }
+.color-palette { display: flex; gap: 6px; }
+.color-opt { width: 20px; height: 20px; border-radius: 50%; cursor: pointer; border: 2px solid transparent; }
+.color-opt.active { border-color: var(--primary); }
+.add-btn { background: var(--primary); border: none; padding: 6px 15px; border-radius: 4px; font-weight: bold; cursor: pointer; }
+
+/* Masonry Grid */
+.notes-grid { column-count: 2; column-gap: 15px; min-height: 200px; }
+.note-card {
+    background: var(--card);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    break-inside: avoid;
+    position: relative;
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: 0.2s;
+}
+.note-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.6); }
+.note-card h4 { margin: 0 0 8px 0; }
+.note-card p { font-size: 0.9rem; color: #ddd; white-space: pre-wrap; margin: 0; }
+.note-card .meta { font-size: 0.7rem; color: rgba(255,255,255,0.3); margin-top: 10px; }
+.note-delete { position: absolute; top: 10px; right: 10px; cursor: pointer; opacity: 0; }
+.note-card:hover .note-delete { opacity: 1; }
+
+.no-results { text-align: center; color: #5f6368; grid-column: 1 / -1; padding: 40px; }
