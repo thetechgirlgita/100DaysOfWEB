@@ -92,3 +92,4 @@ This repository will be updated **daily** as I continue my learning journey.
 | Day 72 | Todo Application with Insight | [View Code](Code/Day72/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day72)|
 | Day 73 | Sticky Notes | [View Code](Code/Day73/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day73)|
 | Day 74 | Sticky Notes(updated color pallet) | [View Code](Code/Day74/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day74)|
+| Day 75 | Sticky Notes(updated Search Filter) | [View Code](Code/Day75/index.html)| [View Result Here](https://thetechgirlgita.github.io/100DaysOfWEB/Code/Day75)|
